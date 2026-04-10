@@ -15,6 +15,10 @@ export default function Hero() {
           Four tracks. One basement. Zero gatekeeping.
         </p>
 
+        <p className="mt-4 text-sm text-t3 max-w-md mx-auto">
+          Insert your idea. We&apos;ll provide the backbone.
+        </p>
+
         {/* Group 2 — Key Details */}
         <div className="mt-8 inline-flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-0 rounded-lg border border-edge bg-surface px-5 py-3 text-sm text-t2">
           <span>18 April 2026</span>
