@@ -20,9 +20,9 @@ export default function Register() {
         <div className="mx-auto max-w-md text-center">
           <div className="bg-surface border border-edge rounded-xl p-10">
             <p className="text-accent text-2xl mb-2">&#10003;</p>
-            <h3 className="text-lg font-semibold text-t1 mb-1">You&apos;re in.</h3>
+            <h3 className="text-lg font-semibold text-t1 mb-1">Payload received.</h3>
             <p className="text-sm text-t2">
-              We&apos;ll send details before April 18.
+              Transformation successful. Screen your inbox for confirmation.
             </p>
           </div>
         </div>
