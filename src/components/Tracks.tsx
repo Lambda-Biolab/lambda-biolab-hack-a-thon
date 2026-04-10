@@ -7,11 +7,12 @@ const tracks = [
     color: "var(--track-bio)",
     icon: "/tracks/biology.png",
     description:
-      "Clone, transfect, characterize. BSL-1 lab space, cloning reagents, and enzymes from Lambda Biolab stock.",
+      "Clone, transfect, engineer. BSL-1 lab space with cloning reagents, enzymes, and cell lines from Lambda Biolab stock.",
     topics: [
-      "HEK293T/17 transfection optimization",
-      "Cloning workflow with OpenCloning",
-      "Antibiotic resistance cassette characterization",
+      "Drug screening reporter system design",
+      "Human cell transfection and engineering (HEK293T/17)",
+      "Genetic engineering of bacterial or fungal cells for biomanufacturing",
+      "Implementing Robotics and automation into laboratory workflows",
     ],
     prize: "1 month free Lambda Biolab bench membership",
   },
@@ -21,10 +22,13 @@ const tracks = [
     color: "var(--track-compute)",
     icon: "/tracks/compute.png",
     description:
-      "Predict, model, evolve. 32-core i9 with RTX 4090, plus vast.ai GPU credits.",
+      "Predict, dock, evolve. 32-core i9 with RTX 4090 and cloud GPU credits for distributed, compute-heavy workflows.",
     topics: [
-      "AlphaFold2 / Boltz-2 structure prediction",
-      "Meta-harnessing: self-evolving AI agent",
+      "Protein structure prediction and rational design",
+      "Molecular docking and virtual drug screening pipelines",
+      "AI-driven protein engineering and directed evolution",
+      "Self-Improving, Autonomous AI agents for scientific workflows",
+      "Computational design of synthetic gene circuits",
     ],
     prize: "vast.ai GPU rental credit",
   },
@@ -35,7 +39,12 @@ const tracks = [
     icon: "/tracks/hardware.png",
     description:
       "Build, wire, actuate. Starship Factory makerspace access and 3D printers for rapid prototyping.",
-    topics: ["SO-101 general-purpose robotics build"],
+    topics: [
+      "SO-101 general-purpose robotics build",
+      "Custom lab automation and liquid-handling rigs",
+      "Sensor integration for environmental or biological monitoring",
+      "3D-printed labware and open-source instrument design",
+    ],
     prize: "1 month free Starship Factory membership",
   },
   {
@@ -45,7 +54,12 @@ const tracks = [
     icon: "/tracks/byot.png",
     description:
       "Your project, our support. Code review, architecture audit, and dev tool credits. Must be an existing project.",
-    topics: ["Longevity, biotech, software, hardware — anything goes"],
+    topics: [
+      "Longevity and healthspan research tools",
+      "Biotech startup MVPs and proof-of-concepts",
+      "Developer tools, CLIs, or open-source libraries",
+      "Hardware prototypes — electronics, mechatronics, anything physical",
+    ],
     prize: "1 month free Bolt or Vercel Pro",
   },
 ];
