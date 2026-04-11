@@ -1,11 +1,26 @@
 import Image from "next/image";
 
-const tracks = [
+interface Track {
+  tag: string;
+  title: string;
+  color: string;
+  icon: string;
+  photo?: string;
+  photoAlt?: string;
+  photoPosition?: string;
+  description: string;
+  topics: string[];
+  prize: string;
+}
+
+const tracks: Track[] = [
   {
     tag: "Biology",
     title: "Wet Lab",
     color: "var(--track-bio)",
     icon: "/tracks/biology.png",
+    photo: "/photos/gfp-cells.jpeg",
+    photoAlt: "GFP-transfected cells under fluorescence microscopy",
     description:
       "Clone, transfect, engineer. BSL-1 lab space with cloning reagents, enzymes, and cell lines from Lambda Biolab stock.",
     topics: [
@@ -21,6 +36,8 @@ const tracks = [
     title: "IT & Modeling",
     color: "var(--track-compute)",
     icon: "/tracks/compute.png",
+    photo: "/photos/coding.png",
+    photoAlt: "Python code for automated lab instrument control",
     description:
       "Predict, dock, evolve. 32-core i9 with RTX 4090 and cloud GPU credits for distributed, compute-heavy workflows.",
     topics: [
@@ -37,6 +54,9 @@ const tracks = [
     title: "Robotics",
     color: "var(--track-hardware)",
     icon: "/tracks/hardware.png",
+    photo: "/photos/signal-2026-04-10-191904_002.jpeg",
+    photoAlt: "Prusa MK4 3D printer rapid prototyping",
+    photoPosition: "center 15%",
     description:
       "Build, wire, actuate. Starship Factory makerspace access and 3D printers for rapid prototyping.",
     topics: [
@@ -52,6 +72,9 @@ const tracks = [
     title: "Bring Your Own Topic",
     color: "var(--track-byot)",
     icon: "/tracks/byot.png",
+    photo: "/photos/pGL3-SV40-IRES2-EGFP-PURO History.png",
+    photoAlt: "Plasmid cloning history for pGL3-SV40-IRES2-EGFP-PURO",
+    photoPosition: "center 75%",
     description:
       "Your project, our support. Code review, architecture audit, and dev tool credits. Must be an existing project.",
     topics: [
@@ -64,9 +87,21 @@ const tracks = [
   },
 ];
 
-function TrackCard({ track }: { track: (typeof tracks)[number] }) {
+function TrackCard({ track }: { track: Track }) {
   return (
-    <div className="bg-surface border border-edge rounded-xl p-6 hover:border-edge-h transition-colors">
+    <div className="bg-surface border border-edge rounded-xl overflow-hidden hover:border-edge-h transition-colors">
+      {track.photo && (
+        <div className="relative h-32 w-full">
+          <Image
+            src={track.photo}
+            alt={track.photoAlt || ""}
+            fill
+            className="object-cover opacity-80"
+            style={track.photoPosition ? { objectPosition: track.photoPosition } : undefined}
+          />
+        </div>
+      )}
+      <div className="p-6">
       <div className="flex items-start gap-4">
         <Image
           src={track.icon}
@@ -107,6 +142,7 @@ function TrackCard({ track }: { track: (typeof tracks)[number] }) {
           Prize
         </p>
         <p className="text-sm font-medium text-t1">{track.prize}</p>
+      </div>
       </div>
     </div>
   );

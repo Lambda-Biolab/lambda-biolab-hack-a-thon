@@ -1,6 +1,26 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
-    <section className="pt-28 pb-16 md:pt-40 md:pb-24 px-6">
+    <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 px-6 overflow-hidden">
+      {/* Lab background — different images for light/dark */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/photos/lab-user.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-[0.55] dark:opacity-0"
+          priority
+        />
+        <Image
+          src="/photos/signal-2025-10-06-025755_002.jpeg"
+          alt=""
+          fill
+          className="object-cover opacity-0 dark:opacity-[0.40]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/50 via-bg/75 to-bg dark:from-bg/40 dark:via-bg/60 dark:to-bg" />
+      </div>
+
       <div className="mx-auto max-w-4xl text-center">
         {/* Group 1 — Identity + Hook */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-t1 leading-[1.08] tracking-tight">
@@ -20,12 +40,12 @@ export default function Hero() {
         </p>
 
         {/* Group 2 — Key Details */}
-        <div className="mt-8 inline-flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-0 rounded-lg border border-edge bg-surface px-5 py-3 text-sm text-t2">
-          <span>18 April 2026</span>
+        <div className="mt-8 inline-flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-0 rounded-lg border border-edge bg-surface backdrop-blur-md px-5 py-3 text-sm text-t1">
+          <span>Date TBD</span>
           <span aria-hidden="true" className="hidden sm:inline text-t3 mx-2.5">/</span>
-          <span>Riehenstrasse 6/14, Basel</span>
+          <span>Riehenstrasse 14, 4058 Basel</span>
           <span aria-hidden="true" className="hidden sm:inline text-t3 mx-2.5">/</span>
-          <span>Free &middot; ~10 spots</span>
+          <span>Free</span>
         </div>
 
         {/* Group 3 — CTAs */}
