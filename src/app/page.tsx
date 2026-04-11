@@ -1,7 +1,9 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Tracks from "@/components/Tracks";
+import LabStrip from "@/components/LabStrip";
 import Schedule from "@/components/Schedule";
+import Location from "@/components/Location";
 import Register from "@/components/Register";
 import Footer from "@/components/Footer";
 
@@ -18,7 +20,15 @@ export default function Home() {
         <div className="mx-auto max-w-4xl px-6">
           <hr className="border-edge" />
         </div>
+        <LabStrip />
+        <div className="mx-auto max-w-4xl px-6">
+          <hr className="border-edge" />
+        </div>
         <Schedule />
+        <div className="mx-auto max-w-4xl px-6">
+          <hr className="border-edge" />
+        </div>
+        <Location />
         <div className="mx-auto max-w-4xl px-6">
           <hr className="border-edge" />
         </div>

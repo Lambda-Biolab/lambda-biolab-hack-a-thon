@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@custom-variant dark {
+  .dark & {
+    @slot;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light) & {
+      @slot;
+    }
+  }
+}
+
 @theme {
   --color-bg: #f7f8f8;
   --color-surface: #ffffff;
@@ -16,7 +28,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light) {
     --color-bg: #08090a;
     --color-surface: rgba(255, 255, 255, 0.04);
     --color-edge: rgba(255, 255, 255, 0.10);
@@ -25,6 +37,16 @@
     --color-t2: #b0b4bc;
     --color-t3: #8a8f98;
   }
+}
+
+:root.dark {
+  --color-bg: #08090a;
+  --color-surface: rgba(255, 255, 255, 0.04);
+  --color-edge: rgba(255, 255, 255, 0.10);
+  --color-edge-h: rgba(255, 255, 255, 0.20);
+  --color-t1: #f0f0f0;
+  --color-t2: #b0b4bc;
+  --color-t3: #8a8f98;
 }
 
 :root {
