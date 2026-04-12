@@ -9,19 +9,27 @@ export default function Hero() {
           src="/photos/lab-user.jpg"
           alt=""
           fill
-          className="object-cover opacity-[0.35] dark:opacity-0"
+          className="object-cover opacity-90 dark:opacity-0"
           priority
         />
         <Image
           src="/photos/signal-2025-10-06-025755_002.jpeg"
           alt=""
           fill
-          className="object-cover opacity-0 dark:opacity-[0.40]"
+          className="object-cover opacity-0 dark:opacity-80"
         />
-        {/* Stronger gradient overlay in light mode to reduce distraction */}
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/70 via-bg/85 to-bg dark:from-bg/40 dark:via-bg/60 dark:to-bg" />
-        {/* Extra blur layer for light mode */}
-        <div className="absolute inset-0 backdrop-blur-sm dark:backdrop-blur-none" />
+        {/* Gradient overlay to keep text legible without hiding the image */}
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/20 via-bg/40 to-bg dark:from-bg/20 dark:via-bg/45 dark:to-bg" />
+        <div className="absolute inset-0 backdrop-blur-[3px]" />
+        {/* Soft radial vignette behind hero text for legibility */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 65% 55% at 50% 42%, color-mix(in srgb, var(--color-bg) 92%, transparent), color-mix(in srgb, var(--color-bg) 60%, transparent) 55%, transparent 85%)",
+          }}
+        />
       </div>
 
       <div className="mx-auto max-w-4xl text-center">
@@ -36,10 +44,6 @@ export default function Hero() {
 
         <p className="mt-6 text-lg md:text-xl text-t3 max-w-lg mx-auto leading-relaxed">
           Five tracks. One basement. Zero gatekeeping.
-        </p>
-
-        <p className="mt-4 text-sm text-t3 max-w-md mx-auto">
-          Insert your idea. We&apos;ll provide the backbone.
         </p>
 
         {/* Group 2 — Key Details */}
