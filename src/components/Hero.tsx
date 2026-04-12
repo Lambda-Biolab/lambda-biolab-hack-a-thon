@@ -9,7 +9,7 @@ export default function Hero() {
           src="/photos/lab-user.jpg"
           alt=""
           fill
-          className="object-cover opacity-[0.55] dark:opacity-0"
+          className="object-cover opacity-[0.35] dark:opacity-0"
           priority
         />
         <Image
@@ -18,7 +18,10 @@ export default function Hero() {
           fill
           className="object-cover opacity-0 dark:opacity-[0.40]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/50 via-bg/75 to-bg dark:from-bg/40 dark:via-bg/60 dark:to-bg" />
+        {/* Stronger gradient overlay in light mode to reduce distraction */}
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/70 via-bg/85 to-bg dark:from-bg/40 dark:via-bg/60 dark:to-bg" />
+        {/* Extra blur layer for light mode */}
+        <div className="absolute inset-0 backdrop-blur-sm dark:backdrop-blur-none" />
       </div>
 
       <div className="mx-auto max-w-4xl text-center">
@@ -32,7 +35,7 @@ export default function Hero() {
         </p>
 
         <p className="mt-6 text-lg md:text-xl text-t3 max-w-lg mx-auto leading-relaxed">
-          Four tracks. One basement. Zero gatekeeping.
+          Five tracks. One basement. Zero gatekeeping.
         </p>
 
         <p className="mt-4 text-sm text-t3 max-w-md mx-auto">
@@ -41,7 +44,7 @@ export default function Hero() {
 
         {/* Group 2 — Key Details */}
         <div className="mt-8 inline-flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-0 rounded-lg border border-edge bg-surface backdrop-blur-md px-5 py-3 text-sm text-t1">
-          <span>Date TBD</span>
+          <span>April 18, 2026</span>
           <span aria-hidden="true" className="hidden sm:inline text-t3 mx-2.5">/</span>
           <span>Riehenstrasse 14, 4058 Basel</span>
           <span aria-hidden="true" className="hidden sm:inline text-t3 mx-2.5">/</span>
