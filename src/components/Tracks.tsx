@@ -27,7 +27,7 @@ const tracks: Track[] = [
       "Drug screening reporter system design",
       "Human cell transfection and engineering (HEK293T/17)",
       "Genetic engineering of bacterial or fungal cells for biomanufacturing",
-      "Implementing Robotics and automation into laboratory workflows",
+      "Implementing robotics and automation into laboratory workflows",
     ],
     prize: "1 month free Lambda Biolab bench membership",
   },
@@ -44,7 +44,7 @@ const tracks: Track[] = [
       "Protein structure prediction and rational design",
       "Molecular docking and virtual drug screening pipelines",
       "AI-driven protein engineering and directed evolution",
-      "Self-Improving, Autonomous AI agents for scientific workflows",
+      "Self-improving, autonomous AI agents for scientific workflows",
       "Computational design of synthetic gene circuits",
     ],
     prize: "vast.ai GPU rental credit",
@@ -68,6 +68,21 @@ const tracks: Track[] = [
     prize: "1 month free Starship Factory membership",
   },
   {
+    tag: "Equipment",
+    title: "Lab Equipment Hacking",
+    color: "var(--track-equip)",
+    icon: "/tracks/hardware.png",
+    description:
+      "Crack open the black box. Reverse-engineer, modify, or extend real lab instruments — firmware, protocols, and hardware alike.",
+    topics: [
+      "Open-source firmware modification for lab instruments",
+      "Serial/USB/CAN protocol reverse engineering",
+      "DIY spectrophotometer, biosensor, or reader builds",
+      "Lab automation controller hacking and integration",
+    ],
+    prize: "1 month free Lambda Biolab bench membership",
+  },
+  {
     tag: "BYOT",
     title: "Bring Your Own Topic",
     color: "var(--track-byot)",
@@ -76,11 +91,11 @@ const tracks: Track[] = [
     photoAlt: "Plasmid cloning history for pGL3-SV40-IRES2-EGFP-PURO",
     photoPosition: "center 75%",
     description:
-      "Your project, our support. Code review, architecture audit, and dev tool credits. Must be an existing project.",
+      "Your project, our support. Bring an existing project at the intersection of biology, hardware, or data science. Claude and OpenRouter API credits provided. Must clearly align with our core topics.",
     topics: [
       "Longevity and healthspan research tools",
       "Biotech startup MVPs and proof-of-concepts",
-      "Developer tools, CLIs, or open-source libraries",
+      "Developer tools, CLIs, or open-source libraries for science",
       "Hardware prototypes — electronics, mechatronics, anything physical",
     ],
     prize: "1 month free Bolt or Vercel Pro",
@@ -154,10 +169,10 @@ export default function Tracks() {
       <div className="mx-auto max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-semibold text-t1 tracking-tight">
-            Four Tracks
+            Five Tracks
           </h2>
           <p className="mt-3 text-base text-t2">
-            Pick your lane. Wet lab, compute, hardware, or bring your own project.
+            Pick your lane. Wet lab, compute, hardware, equipment hacking, or bring your own project.
           </p>
         </div>
 
