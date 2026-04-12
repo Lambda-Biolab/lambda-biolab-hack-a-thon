@@ -31,14 +31,14 @@ const ruleGroups: RuleGroup[] = [
     icon: "quality",
     items: [
       {
-        label: "No AI slop",
+        label: "Understand your architecture",
         detail:
-          "We will not evaluate 100,000-line auto-generated codebases you do not understand. There May be no Vibes — code that exists purely because an AI produced it, with no author comprehension, is disqualified.",
+          "You don't need to explain every line — but you should be able to walk a judge through how your project is structured, why you made the key decisions, and how the pieces fit together. Sprawling auto-generated codebases with no author comprehension are not in the spirit of the event.",
       },
       {
-        label: "You must own your code",
+        label: "You own your project",
         detail:
-          "You built it, you understand it, you can explain every piece. AI coding assistants (Claude, Copilot, etc.) are permitted as tools — but you are responsible for the output.",
+          "AI coding assistants (Claude, Copilot, Cursor, etc.) are welcome tools — use them freely. The expectation is simply that you, the creator, remain the author: you drove the design, you can defend the choices, and the project reflects your judgment.",
       },
       {
         label: "AI API credits provided",
