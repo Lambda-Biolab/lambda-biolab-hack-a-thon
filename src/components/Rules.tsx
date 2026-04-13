@@ -12,7 +12,7 @@ const ruleGroups: RuleGroup[] = [
       {
         label: "Public repos only",
         detail:
-          "Your project must live in a public GitHub or GitLab repository. Private repos are not eligible — judges need to be able to see and verify your work.",
+          "Your project must live in a public GitHub or GitLab repository — we celebrate open science. Private repos are not eligible, judges need to be able to see and verify your work.",
       },
       {
         label: "Commit everything before the deadline",
@@ -76,11 +76,6 @@ const ruleGroups: RuleGroup[] = [
         label: "BYOT must relate to our core areas",
         detail:
           "Bring Your Own Topic projects must clearly connect to biology, computation, hardware, or lab science. General SaaS apps or unrelated products are not eligible.",
-      },
-      {
-        label: "Open source",
-        detail:
-          "All submitted projects must be open source with a public repository on GitHub or GitLab. We celebrate open science.",
       },
     ],
   },
