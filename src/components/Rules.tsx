@@ -6,8 +6,8 @@ interface RuleGroup {
 
 const labRules: RuleGroup[] = [
   {
-    title: "Biosafety",
-    icon: "lab",
+    title: "Lab Safety & Conduct",
+    icon: "ppe",
     items: [
       {
         label: "BSL-1 only",
@@ -19,12 +19,6 @@ const labRules: RuleGroup[] = [
         detail:
           "No mammalian viral vectors (lentivirus, retrovirus, AAV, adenovirus, etc.). Non-viral transfection reagents are provided.",
       },
-    ],
-  },
-  {
-    title: "Safety & Conduct",
-    icon: "ppe",
-    items: [
       {
         label: "PPE required",
         detail:
@@ -41,7 +35,7 @@ const labRules: RuleGroup[] = [
 
 const projectRules: RuleGroup[] = [
   {
-    title: "Repository Requirements",
+    title: "Submission Requirements",
     icon: "repo",
     items: [
       {
@@ -64,10 +58,35 @@ const projectRules: RuleGroup[] = [
         detail:
           "If you need a starting point, we will provide starter repo templates for common use cases. Using a template counts as starting fresh, not as a pre-built project.",
       },
+      {
+        label: "eLabFTW for wet-lab work",
+        detail:
+          "Wet-lab teams record day-of bench work in Lambda Biolab's eLabFTW — protocol instances, reagents, gel and plate photos, timestamped entries. It's faster than Git for notebook work and gives judges a proper audit trail.",
+      },
+      {
+        label: "Link the notebook from your repo",
+        detail:
+          "Your eLabFTW experiments must be set to public share before the submission cutoff, and the repo README must link to each relevant experiment. If the judges can't open the notebook from the repo, it doesn't count.",
+      },
+      {
+        label: "Continuing an existing project is allowed",
+        detail:
+          "You may continue work on a project started before the hackathon. Declare it in the Luma registration form (there's an optional field for the existing-project README link) so judges know what to scope out.",
+      },
+      {
+        label: "Pre-built projects must be clearly labelled",
+        detail:
+          "Your README must clearly document what existed before the hackathon and what you plan to add during it. Judges only evaluate progress made on the hackathon day and during the 14-day Results Round — nothing that existed before kickoff counts.",
+      },
+      {
+        label: "Topic alignment",
+        detail:
+          "Bring Your Own Topic projects must clearly connect to biology, computation, hardware, or lab science. General SaaS apps or unrelated products are not eligible.",
+      },
     ],
   },
   {
-    title: "Code Quality — No Vibes",
+    title: "Code Quality & Spirit",
     icon: "quality",
     items: [
       {
@@ -93,34 +112,38 @@ const projectRules: RuleGroup[] = [
     ],
   },
   {
-    title: "Lab Notebook",
-    icon: "eln",
+    title: "Code of Conduct",
+    icon: "conduct",
     items: [
       {
-        label: "eLabFTW for wet-lab work",
+        label: "Be kind, be useful",
         detail:
-          "Wet-lab teams record day-of bench work in Lambda Biolab's eLabFTW — protocol instances, reagents, gel and plate photos, timestamped entries. It's faster than Git for notebook work and gives judges a proper audit trail.",
+          "Treat fellow hackers, organizers, and Lambda Biolab staff with respect. Help your neighbours, share equipment graciously, and assume good faith. We're all here to learn and build.",
       },
       {
-        label: "Link the notebook from your repo",
+        label: "Zero tolerance for harassment",
         detail:
-          "Your eLabFTW experiments must be set to public share before the submission cutoff, and the repo README must link to each relevant experiment. If the judges can't open the notebook from the repo, it doesn't count.",
-      },
-    ],
-  },
-  {
-    title: "Pre-Built & Continuing Projects",
-    icon: "prebuilt",
-    items: [
-      {
-        label: "Continuing an existing project is allowed",
-        detail:
-          "You may continue work on a project started before the hackathon. Declare it in the Luma registration form (there's an optional field for the existing-project README link) so judges know what to scope out.",
+          "No harassment, discrimination, or hostile behaviour on any axis — race, gender, orientation, nationality, religion, disability, or anything else. Organizers may remove anyone violating this rule from the event without refund.",
       },
       {
-        label: "Pre-built projects must be clearly labelled",
+        label: "No NSFW or adult content",
         detail:
-          "Your README must clearly document what existed before the hackathon and what you plan to add during it. Judges only evaluate progress made on the hackathon day and during the 14-day Results Round — nothing that existed before kickoff counts.",
+          "Projects, demos, slides, and presentations must be safe-for-work. No adult, sexual, or gratuitously violent content in submissions or live demos.",
+      },
+      {
+        label: "Nothing harmful or illegal",
+        detail:
+          "No weapons, malware, exploit kits, doxxing tools, scrapers targeting private data, or anything designed to harm people, systems, or organizations. No illegal activity under Swiss law.",
+      },
+      {
+        label: "No attacks on third-party systems",
+        detail:
+          "No DDoS, unauthorized penetration testing, credential stuffing, or scraping against systems you don't own. Stay within the bounds of every API's terms of service. If you're unsure, ask an organizer.",
+      },
+      {
+        label: "Respect the lab and the building",
+        detail:
+          "Lambda Biolab is a working laboratory in a residential building. Keep noise reasonable, don't wander into off-limits areas, clean up after yourself, and follow staff instructions immediately.",
       },
     ],
   },
@@ -157,16 +180,31 @@ const icons: Record<string, React.ReactNode> = {
       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" />
     </svg>
   ),
+  conduct: (
+    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+    </svg>
+  ),
 };
 
 function RuleCard({ group }: { group: RuleGroup }) {
   return (
-    <div className="bg-surface border border-edge rounded-xl p-6">
-      <div className="flex items-center gap-2.5 mb-5">
+    <details className="group bg-surface border border-edge rounded-xl [&_summary::-webkit-details-marker]:hidden">
+      <summary className="flex items-center gap-2.5 p-6 cursor-pointer list-none select-none">
         <span className="text-t3">{icons[group.icon]}</span>
-        <h3 className="text-base font-semibold text-t1 tracking-tight">{group.title}</h3>
-      </div>
-      <ul className="space-y-4">
+        <h3 className="text-base font-semibold text-t1 tracking-tight flex-1">{group.title}</h3>
+        <span className="text-xs text-t3 mr-1">{group.items.length}</span>
+        <svg
+          className="w-4 h-4 text-t3 transition-transform group-open:rotate-180"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={1.5}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </summary>
+      <ul className="space-y-4 px-6 pb-6 pt-1">
         {group.items.map((item) => (
           <li key={item.label}>
             <p className="text-sm font-medium text-t1 mb-0.5">{item.label}</p>
@@ -174,7 +212,7 @@ function RuleCard({ group }: { group: RuleGroup }) {
           </li>
         ))}
       </ul>
-    </div>
+    </details>
   );
 }
 
@@ -194,7 +232,7 @@ export default function Rules() {
         <h3 className="text-xs font-mono uppercase tracking-wider text-t3 mb-4">
           Lab Rules
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+        <div className="mb-10">
           {labRules.map((group) => (
             <RuleCard key={group.title} group={group} />
           ))}
@@ -203,15 +241,11 @@ export default function Rules() {
         <h3 className="text-xs font-mono uppercase tracking-wider text-t3 mb-4">
           Project Rules
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-start mb-5">
+        <div className="flex flex-col gap-5 mb-8">
           {projectRules.map((group) => (
             <RuleCard key={group.title} group={group} />
           ))}
         </div>
-        <p className="text-sm text-t2 leading-relaxed mb-8">
-          <span className="font-medium text-t1">Topic alignment.</span>{" "}
-          Bring Your Own Topic projects must clearly connect to biology, computation, hardware, or lab science. General SaaS apps or unrelated products are not eligible.
-        </p>
 
         {/* Disclaimer */}
         <div className="bg-surface border border-edge rounded-xl p-6">
