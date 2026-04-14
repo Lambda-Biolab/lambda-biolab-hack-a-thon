@@ -22,24 +22,23 @@ const tracks: Track[] = [
     photo: "/photos/gfp-cells.jpeg",
     photoAlt: "GFP-transfected cells under fluorescence microscopy",
     description:
-      "Clone, transfect, engineer. BSL-1 lab space with cloning reagents, enzymes, and cell lines from Lambda Biolab stock.",
+      "Clone, transfect, engineer. BSL-1 lab space with cloning reagents, enzymes, and cell lines from Lambda Biolab stock. Every entrant gets 2 weeks of Lambda Biolab bench access after the event to finish their results.",
     topics: [
       "Drug screening reporter system design",
       "Human cell transfection and engineering (HEK293T/17)",
       "Genetic engineering of bacterial or fungal cells for biomanufacturing",
-      "Implementing robotics and automation into laboratory workflows",
     ],
-    prize: "1 month free Lambda Biolab bench membership",
+    prize: "2 × 1 month free Lambda Biolab bench membership (see Results Round)",
   },
   {
-    tag: "Computational",
-    title: "IT & Modeling",
+    tag: "Dev",
+    title: "Dev",
     color: "var(--track-compute)",
     icon: "/tracks/compute.png",
     photo: "/photos/coding.png",
     photoAlt: "Python code for automated lab instrument control",
     description:
-      "Predict, dock, evolve. 32-core i9 with RTX 4090 and cloud GPU credits for distributed, compute-heavy workflows.",
+      "Predict, dock, evolve. 32-core i9 with RTX 4090 available on-site (shared, time-sliced), plus cloud GPU credits for heavier workloads.",
     topics: [
       "Protein structure prediction and rational design",
       "Molecular docking and virtual drug screening pipelines",
@@ -58,20 +57,23 @@ const tracks: Track[] = [
     photoAlt: "Prusa MK4 3D printer rapid prototyping",
     photoPosition: "center 15%",
     description:
-      "Build, wire, actuate. Starship Factory makerspace access and 3D printers for rapid prototyping.",
+      "Build, wire, actuate. 3D printers available at Lambda Biolab throughout the event.",
     topics: [
       "SO-101 general-purpose robotics build",
       "Custom lab automation and liquid-handling rigs",
       "Sensor integration for environmental or biological monitoring",
       "3D-printed labware and open-source instrument design",
     ],
-    prize: "1 month free Starship Factory membership",
+    prize: "1 month free Starship Factory access",
   },
   {
     tag: "Equipment",
     title: "Lab Equipment Hacking",
     color: "var(--track-equip)",
     icon: "/tracks/hardware.png",
+    photo: "/photos/labware.jpg",
+    photoAlt: "Lab equipment internals",
+    photoPosition: "center",
     description:
       "Crack open the black box. Reverse-engineer, modify, or extend real lab instruments — firmware, protocols, and hardware alike.",
     topics: [
@@ -87,11 +89,11 @@ const tracks: Track[] = [
     title: "Bring Your Own Topic",
     color: "var(--track-byot)",
     icon: "/tracks/byot.png",
-    photo: "/photos/pGL3-SV40-IRES2-EGFP-PURO History.png",
+    photo: "/photos/pGL3-SV40-IRES2-EGFP-PURO-history.png",
     photoAlt: "Plasmid cloning history for pGL3-SV40-IRES2-EGFP-PURO",
-    photoPosition: "center 75%",
+    photoPosition: "center",
     description:
-      "Your project, our support. Bring an existing project at the intersection of biology, hardware, or data science. Claude and OpenRouter API credits provided. Must clearly align with our core topics.",
+      "Your project, our support. Bring an existing project at the intersection of biology, hardware, or data science.",
     topics: [
       "Longevity and healthspan research tools",
       "Biotech startup MVPs and proof-of-concepts",
@@ -104,7 +106,7 @@ const tracks: Track[] = [
 
 function TrackCard({ track }: { track: Track }) {
   return (
-    <div className="bg-surface border border-edge rounded-xl overflow-hidden hover:border-edge-h transition-colors">
+    <div className="bg-surface border border-edge rounded-xl overflow-hidden hover:border-edge-h transition-colors md:last:col-span-2 md:last:mx-auto md:last:w-full md:last:max-w-[calc(50%-0.625rem)]">
       {track.photo && (
         <div className="relative h-32 w-full">
           <Image
@@ -143,6 +145,9 @@ function TrackCard({ track }: { track: Track }) {
         {track.description}
       </p>
 
+      <p className="text-xs font-mono uppercase tracking-wider text-t3 mb-2">
+        Suggestions
+      </p>
       <ul className="space-y-1.5 mb-5">
         {track.topics.map((topic) => (
           <li key={topic} className="text-sm text-t2 flex items-start gap-2">

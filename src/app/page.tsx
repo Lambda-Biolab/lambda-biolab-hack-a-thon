@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Tracks from "@/components/Tracks";
 import LabStrip from "@/components/LabStrip";
 import Schedule from "@/components/Schedule";
+import ResultsRound from "@/components/ResultsRound";
 import Location from "@/components/Location";
 import Rules from "@/components/Rules";
 import Register from "@/components/Register";
@@ -26,6 +27,10 @@ export default function Home() {
           <hr className="border-edge" />
         </div>
         <Schedule />
+        <div className="mx-auto max-w-4xl px-6">
+          <hr className="border-edge" />
+        </div>
+        <ResultsRound />
         <div className="mx-auto max-w-4xl px-6">
           <hr className="border-edge" />
         </div>

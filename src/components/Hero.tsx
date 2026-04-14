@@ -43,12 +43,12 @@ export default function Hero() {
         </p>
 
         <p className="mt-6 text-lg md:text-xl text-t3 max-w-lg mx-auto leading-relaxed">
-          Five tracks. One basement. Zero gatekeeping.
+          Five tracks. Real lab. Open science.
         </p>
 
         {/* Group 2 — Key Details */}
         <div className="mt-8 inline-flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-0 rounded-lg border border-edge bg-surface backdrop-blur-md px-5 py-3 text-sm text-t1">
-          <span>April 18, 2026</span>
+          <span>Date TBD</span>
           <span aria-hidden="true" className="hidden sm:inline text-t3 mx-2.5">/</span>
           <span>Riehenstrasse 14, 4058 Basel</span>
           <span aria-hidden="true" className="hidden sm:inline text-t3 mx-2.5">/</span>

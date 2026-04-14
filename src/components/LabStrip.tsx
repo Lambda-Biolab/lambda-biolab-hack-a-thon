@@ -3,7 +3,7 @@ import Image from "next/image";
 const photos = [
   { src: "/photos/lab-user.jpg", alt: "Lab member working at the bench" },
   { src: "/photos/inside-lab/DJI_20231217073519_0199_D.JPG", alt: "Blue light transilluminator with agar plate" },
-  { src: "/photos/inside-lab/Screenshot 2024-12-30 at 14.00.45.png", alt: "Fluorescent protein tubes glowing under UV" },
+  { src: "/photos/inside-lab/fluorescent-tubes-uv.png", alt: "Fluorescent protein tubes glowing under UV" },
   { src: "/photos/inside-lab/20241201_154803.jpg", alt: "Electrophoresis and microscope bench" },
   { src: "/photos/inside-lab/20241031_230227.jpg", alt: "Incubator shaker with bacterial cultures" },
   { src: "/photos/antonio-pipetting.jpg", alt: "Pipetting at the bench" },
