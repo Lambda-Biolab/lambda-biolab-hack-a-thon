@@ -1,5 +1,5 @@
 export default function Register() {
-  const lumaUrl = "https://lu.ma/evt-Z93XbXC3x4i22At";
+  const lumaUrl = "https://luma.com/s9p5bntq";
 
   return (
     <section id="register" className="py-16 md:py-24 px-6">
@@ -8,7 +8,7 @@ export default function Register() {
           Register
         </h2>
         <p className="mt-3 text-base text-t2">
-          Free to attend. Sign up on Luma to reserve your spot.
+          Free to attend. Space is limited by bench count — registration closes when we hit capacity.
         </p>
 
         <a

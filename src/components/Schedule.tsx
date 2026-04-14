@@ -6,7 +6,7 @@ const schedule = [
   { time: "13:30", activity: "Resume hacking", note: "Colony growth" },
   { time: "16:00", activity: "Soft deadline — wrap up, prep demos", note: "Screen colonies" },
   { time: "16:30", activity: "Demos + judging", note: "Gel verification · 5–7 min per team" },
-  { time: "17:30", activity: "Results + prizes", note: "Sequence confirmed" },
+  { time: "17:30", activity: "Day-of awards", note: "Sequence confirmed" },
   { time: "18:00", activity: "Casual drinks & hangout", note: "Glycerol stock & freeze" },
 ];
 

@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/lambda-biolab-hack-a-thon",
+  basePath: process.env.NODE_ENV === "production" ? "/lambda-biolab-hack-a-thon" : "",
   images: { unoptimized: true },
 };
 
