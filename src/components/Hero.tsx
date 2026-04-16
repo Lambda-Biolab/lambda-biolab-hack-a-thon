@@ -48,7 +48,7 @@ export default function Hero() {
 
         {/* Group 2 — Key Details */}
         <div className="mt-8 inline-flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-0 rounded-lg border border-edge bg-surface backdrop-blur-md px-5 py-3 text-sm text-t1">
-          <span>Date TBD</span>
+          <span>May 16, 2026</span>
           <span aria-hidden="true" className="hidden sm:inline text-t3 mx-2.5">/</span>
           <span>Riehenstrasse 14, 4058 Basel</span>
           <span aria-hidden="true" className="hidden sm:inline text-t3 mx-2.5">/</span>

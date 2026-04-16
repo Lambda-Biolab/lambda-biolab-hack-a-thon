@@ -15,7 +15,7 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Lambda Hack Basel — April 18, 2026",
+  title: "Lambda Hack Basel — May 16, 2026",
   description:
     "Four tracks. One basement. Zero gatekeeping. A scrappy hackathon at the intersection of biology, computation, hardware, and everything else.",
 };
