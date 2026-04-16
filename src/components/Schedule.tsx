@@ -19,7 +19,7 @@ export default function Schedule() {
             Schedule
           </h2>
           <p className="mt-3 text-base text-t2">
-            Date TBD
+            Saturday, May 16, 2026
           </p>
         </div>
 
