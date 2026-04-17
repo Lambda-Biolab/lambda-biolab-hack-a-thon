@@ -28,7 +28,7 @@ const tracks: Track[] = [
       "Human cell transfection and engineering (HEK293T/17)",
       "Genetic engineering of bacterial or fungal cells for biomanufacturing",
     ],
-    prize: "2 × 1 month free Lambda Biolab bench membership (see Results Round)",
+    prize: "1 month free Lambda Biolab bench membership × 2 — one for Best Plan (day-of), one for Best Result (after the Results Round)",
   },
   {
     tag: "Dev",
@@ -177,7 +177,7 @@ export default function Tracks() {
             Five Tracks
           </h2>
           <p className="mt-3 text-base text-t2">
-            Pick your lane. Wet lab, compute, hardware, equipment hacking, or bring your own project.
+            Pick your lane. Wet lab, dev, robotics, lab equipment hacking, or bring your own topic.
           </p>
         </div>
 

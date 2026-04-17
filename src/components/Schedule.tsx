@@ -1,10 +1,11 @@
 const schedule = [
   { time: "09:00", activity: "Doors open, coffee, setup", note: "Thaw & equilibrate" },
+  { time: "09:15", activity: "Wet-lab safety induction (wet-lab teams only)", note: "Flame the hood" },
   { time: "09:30", activity: "Welcome + track intros", note: "Digest & ligate" },
   { time: "10:00", activity: "Hacking begins", note: "Transform" },
   { time: "12:30", activity: "Lunch break", note: "Incubate (37 °C, communal)" },
   { time: "13:30", activity: "Resume hacking", note: "Colony growth" },
-  { time: "16:00", activity: "Soft deadline — wrap up, prep demos", note: "Screen colonies" },
+  { time: "16:00", activity: "Deadline — wrap up, prep demos", note: "Screen colonies" },
   { time: "16:30", activity: "Demos + judging", note: "Gel verification · 5–7 min per team" },
   { time: "17:30", activity: "Day-of awards", note: "Sequence confirmed" },
   { time: "18:00", activity: "Casual drinks & hangout", note: "Glycerol stock & freeze" },
@@ -19,7 +20,7 @@ export default function Schedule() {
             Schedule
           </h2>
           <p className="mt-3 text-base text-t2">
-            Saturday, May 16, 2026
+            Saturday, May 16, 2026 · all times CET
           </p>
         </div>
 

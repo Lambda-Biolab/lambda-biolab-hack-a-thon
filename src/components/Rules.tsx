@@ -44,9 +44,14 @@ const projectRules: RuleGroup[] = [
           "Every project must live in a public Git repository — GitHub, GitLab, Codeberg, or any other public host. A public mirror of a private working repo is fine as long as all hackathon commits are visible there.",
       },
       {
+        label: "Open-source license required",
+        detail:
+          "Every submission — code, hardware designs, and data — must ship under a recognized open-source license (e.g., MIT, Apache-2.0, or GPL for code; CERN-OHL or similar for hardware; CC-BY or CC0 for data and notebooks). That's what makes this an open-science event: anyone can learn from, fork, and build on what you make here.",
+      },
+      {
         label: "Commit everything before the deadline",
         detail:
-          "All hackathon-day work must be committed and pushed before the 16:00 soft deadline. We verify progress via commit timestamps — no retroactive pushes, force-pushes, or history rewrites to hackathon-day commits after the deadline.",
+          "All hackathon-day work must be committed and pushed before the 16:00 deadline. We verify progress via commit timestamps — no retroactive pushes, force-pushes, or history rewrites to hackathon-day commits after the deadline.",
       },
       {
         label: "Results Round commits are allowed",
@@ -82,6 +87,37 @@ const projectRules: RuleGroup[] = [
         label: "Topic alignment",
         detail:
           "Bring Your Own Topic projects must clearly connect to biology, computation, hardware, or lab science. General SaaS apps or unrelated products are not eligible.",
+      },
+    ],
+  },
+  {
+    title: "Judging Criteria",
+    icon: "judging",
+    items: [
+      {
+        label: "Technical depth & execution",
+        detail:
+          "Quality and craft of what you actually shipped. For Wet Lab that means protocol rigour and sample handling; for Dev, code and method quality; for Robotics and Equipment Hacking, build quality, wiring, and reliability.",
+      },
+      {
+        label: "Scientific or engineering merit",
+        detail:
+          "Is the approach sound? Did you reason carefully about the problem, pick sensible controls or baselines, and avoid obvious failure modes? We'd rather see a well-reasoned partial result than a flashy demo built on shaky assumptions.",
+      },
+      {
+        label: "Originality & ambition",
+        detail:
+          "Are you trying something fresh, or pushing familiar tools further than usual? Clever remixes count — direct reskins of an existing tool don't.",
+      },
+      {
+        label: "Clarity & reproducibility",
+        detail:
+          "A judge should be able to follow your 5-minute demo, clone your repo, and understand what you did from the README alone. Wet-lab teams: your linked eLabFTW notebook is part of this — it's how a stranger reproduces your work.",
+      },
+      {
+        label: "Spirit of the event",
+        detail:
+          "Open collaboration, honest scope, and good-faith use of AI tools. Tie-breaker when the other four criteria are close.",
       },
     ],
   },
@@ -173,6 +209,11 @@ const icons: Record<string, React.ReactNode> = {
   quality: (
     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  ),
+  judging: (
+    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
     </svg>
   ),
   prebuilt: (
