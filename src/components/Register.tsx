@@ -8,7 +8,7 @@ export default function Register() {
           Register
         </h2>
         <p className="mt-3 text-base text-t2">
-          Free to attend. Space is limited by bench count — registration closes when we hit capacity.
+          Free to attend.
         </p>
 
         <a
