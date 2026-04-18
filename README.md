@@ -1,6 +1,6 @@
 # Lambda Hack Basel
 
-Website for Lambda Hack Basel — a scrappy hackathon at the intersection of biology, computation, hardware, and everything else. May 16, 2026.
+Website for Lambda Hack Basel — a scrappy hackathon at the intersection of biology, computation, hardware, and everything else. May 16–17, 2026.
 
 ## Dev
 

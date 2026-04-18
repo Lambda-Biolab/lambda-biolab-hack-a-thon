@@ -51,12 +51,12 @@ const projectRules: RuleGroup[] = [
       {
         label: "Commit everything before the deadline",
         detail:
-          "All hackathon-day work must be committed and pushed before the 16:00 deadline. We verify progress via commit timestamps — no retroactive pushes, force-pushes, or history rewrites to hackathon-day commits after the deadline.",
+          "All hackathon work must be committed and pushed before the Sunday 14:00 deadline. We verify progress via commit timestamps — no retroactive pushes, force-pushes, or history rewrites to hackathon commits after the deadline.",
       },
       {
         label: "Results Round commits are allowed",
         detail:
-          "During the 14-day Results Round, new commits adding RESULTS.md, figures, and analysis are expected and explicitly allowed. Do not edit or rewrite hackathon-day commits — add new ones.",
+          "During the 14-day Results Round, new commits adding RESULTS.md, figures, and analysis are expected and explicitly allowed. Do not edit or rewrite hackathon commits — add new ones.",
       },
       {
         label: "Starter templates available",
@@ -66,7 +66,7 @@ const projectRules: RuleGroup[] = [
       {
         label: "eLabFTW for wet-lab work",
         detail:
-          "Wet-lab teams record day-of bench work in Lambda Biolab's eLabFTW — protocol instances, reagents, gel and plate photos, timestamped entries. It's faster than Git for notebook work and gives judges a proper audit trail.",
+          "Wet-lab teams record bench work in Lambda Biolab's eLabFTW — protocol instances, reagents, gel and plate photos, timestamped entries. It's faster than Git for notebook work and gives judges a proper audit trail.",
       },
       {
         label: "Link the notebook from your repo",
@@ -81,7 +81,7 @@ const projectRules: RuleGroup[] = [
       {
         label: "Pre-built projects must be clearly labelled",
         detail:
-          "Your README must clearly document what existed before the hackathon and what you plan to add during it. Judges only evaluate progress made on the hackathon day and during the 14-day Results Round — nothing that existed before kickoff counts.",
+          "Your README must clearly document what existed before the hackathon and what you plan to add during it. Judges only evaluate progress made during the hackathon weekend and the 14-day Results Round — nothing that existed before kickoff counts.",
       },
       {
         label: "Topic alignment",

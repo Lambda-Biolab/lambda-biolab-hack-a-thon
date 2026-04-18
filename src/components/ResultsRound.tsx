@@ -1,8 +1,8 @@
 const steps: { label: string; detail: string }[] = [
   {
-    label: "Day-of — Best Plan",
+    label: "At the event — Best Plan",
     detail:
-      "Wet Lab teams present their experimental design, execution-so-far, and whatever has grown by 16:00. See the Schedule for timing.",
+      "Wet Lab teams present their experimental design, execution-so-far, and whatever has grown by Sunday 14:00. See the Schedule for timing.",
   },
   {
     label: "14-day results window",
@@ -30,7 +30,7 @@ export default function ResultsRound() {
             Results Round
           </h2>
           <p className="mt-3 text-base text-t2">
-            Biology doesn&apos;t ship in six hours. Wet Lab has two judging moments — Best Plan on the day, Best Result two weeks later.
+            Biology doesn&apos;t ship in a weekend. Wet Lab has two judging moments — Best Plan at the event, Best Result two weeks later.
           </p>
         </div>
 
