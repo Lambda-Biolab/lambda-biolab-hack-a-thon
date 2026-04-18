@@ -28,7 +28,7 @@ const tracks: Track[] = [
       "Human cell transfection and engineering (HEK293T/17)",
       "Genetic engineering of bacterial or fungal cells for biomanufacturing",
     ],
-    prize: "1 month free Lambda Biolab bench membership × 2 — one for Best Plan (day-of), one for Best Result (after the Results Round)",
+    prize: "1 month free Lambda Biolab bench membership × 2 — one for Best Plan (at the event), one for Best Result (after the Results Round)",
   },
   {
     tag: "Dev",
