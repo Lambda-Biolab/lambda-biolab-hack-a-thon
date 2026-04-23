@@ -1,0 +1,45 @@
+name: Bug report
+description: Something on the site is broken, wrong, or misleading
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please fill in what you can — a URL, a screenshot, and your browser/device go a long way.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you see, and what did you expect instead?
+      placeholder: "e.g. The Tracks section photos are broken on mobile Safari."
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Page URL (if applicable)
+      placeholder: "https://lambda-biolab.github.io/lambda-biolab-hack-a-thon/#tracks"
+
+  - type: dropdown
+    id: viewport
+    attributes:
+      label: Viewport
+      options:
+        - Mobile
+        - Tablet
+        - Desktop
+        - Unsure
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser + OS
+      placeholder: "e.g. Safari 18 on iOS 18, or Chrome 129 on macOS"
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / console errors
+      description: Paste or drag-drop. DevTools Console errors especially helpful.

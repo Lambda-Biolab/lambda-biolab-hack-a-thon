@@ -1,0 +1,30 @@
+name: Feature or content request
+description: Suggest a new section, copy change, track update, or improvement
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Proposing a new section, a copy edit, a track tweak, or anything else site-side? Describe what and why.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What you're proposing
+      placeholder: "e.g. Add a sponsors section between Tracks and LabStrip."
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: What problem does it solve, or what does it enable?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What else did you think about, and why was it not as good?
