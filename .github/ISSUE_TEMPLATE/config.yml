@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Hackathon questions
+    url: mailto:contact@lambconsulting.bio
+    about: General questions about the event, registration, or logistics — please email rather than file an issue.
+  - name: Lambda Biolab org
+    url: https://github.com/Lambda-Biolab
+    about: Other Lambda Biolab repositories and projects.
