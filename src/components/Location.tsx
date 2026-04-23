@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import type { Map as LeafletMap, TileLayer } from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { useIsDark } from "@/lib/useIsDark";
 
 const ADDRESS = "Riehenstrasse 14, 4058 Basel";
 const COORDS: [number, number] = [47.5602132, 7.5974754];
@@ -13,35 +14,6 @@ const TILES = {
 };
 const ATTRIBUTION =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
-
-function useIsDark() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const check = () => {
-      const html = document.documentElement;
-      const hasDarkClass = html.classList.contains("dark");
-      const hasLightClass = html.classList.contains("light");
-      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setIsDark(hasDarkClass || (!hasLightClass && systemDark));
-    };
-
-    check();
-
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
-    mq.addEventListener("change", check);
-
-    const observer = new MutationObserver(check);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-
-    return () => {
-      mq.removeEventListener("change", check);
-      observer.disconnect();
-    };
-  }, []);
-
-  return isDark;
-}
 
 export default function Location() {
   const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ADDRESS)}`;
