@@ -22,8 +22,5 @@ SOFTWARE.
 
 ---
 
-Note on photos: files under public/photos/ depict identifiable people and lab
-facilities. The MIT grant above covers the site code and structure; reuse of
-individual photographs may require separate consent under Swiss data
-protection law. If forking this repository as a template, supply your own
-photos rather than redistributing these.
+The MIT grant above applies to source code in this repository. Image files
+under public/photos/ are covered by separate terms — see PHOTOS.md.
