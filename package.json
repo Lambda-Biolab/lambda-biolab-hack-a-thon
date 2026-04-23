@@ -7,6 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\" \"#out\" \"#.next\"",
+    "lint:md:fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"#out\" \"#.next\"",
+    "lint:links": "lychee --config lychee.toml --no-progress \"**/*.md\"",
     "optimize:photos": "node scripts/optimize-photos.mjs",
     "generate:og": "node scripts/generate-og.mjs"
   },
@@ -24,6 +27,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
+    "markdownlint-cli2": "^0.22.1",
     "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
