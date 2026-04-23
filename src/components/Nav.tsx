@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const links = [
   { href: "#tracks", label: "Tracks" },
@@ -13,15 +13,11 @@ const links = [
 type Theme = "system" | "light" | "dark";
 
 function useTheme() {
-  const [theme, setTheme] = useState<Theme>("system");
-
-  useEffect(() => {
-    const saved = localStorage.getItem("theme") as Theme | null;
-    if (saved === "light" || saved === "dark") {
-      setTheme(saved);
-      document.documentElement.classList.add(saved);
-    }
-  }, []);
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") return "system";
+    const saved = localStorage.getItem("theme");
+    return saved === "light" || saved === "dark" ? saved : "system";
+  });
 
   const cycle = () => {
     const next: Theme = theme === "system" ? "dark" : theme === "dark" ? "light" : "system";

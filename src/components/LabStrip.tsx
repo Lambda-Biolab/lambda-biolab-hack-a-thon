@@ -32,6 +32,7 @@ export default function LabStrip() {
                 src={photo.src}
                 alt={photo.alt}
                 fill
+                sizes="(min-width: 768px) 33vw, 50vw"
                 className="object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>

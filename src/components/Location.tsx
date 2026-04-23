@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Map as LeafletMap, TileLayer } from "leaflet";
-import "leaflet/dist/leaflet.css";
+import { useIsDark } from "@/lib/useIsDark";
 
 const ADDRESS = "Riehenstrasse 14, 4058 Basel";
 const COORDS: [number, number] = [47.5602132, 7.5974754];
@@ -14,48 +14,39 @@ const TILES = {
 const ATTRIBUTION =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
 
-function useIsDark() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const check = () => {
-      const html = document.documentElement;
-      const hasDarkClass = html.classList.contains("dark");
-      const hasLightClass = html.classList.contains("light");
-      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setIsDark(hasDarkClass || (!hasLightClass && systemDark));
-    };
-
-    check();
-
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
-    mq.addEventListener("change", check);
-
-    const observer = new MutationObserver(check);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-
-    return () => {
-      mq.removeEventListener("change", check);
-      observer.disconnect();
-    };
-  }, []);
-
-  return isDark;
-}
-
 export default function Location() {
-  const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ADDRESS)}`;
+  const mapsUrl = `https://www.openstreetmap.org/directions?to=${COORDS[0]}%2C${COORDS[1]}`;
   const isDark = useIsDark();
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<LeafletMap | null>(null);
   const tileLayerRef = useRef<TileLayer | null>(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (!containerRef.current) return;
+    const el = containerRef.current;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setVisible(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!visible || !containerRef.current) return;
     let cancelled = false;
 
     (async () => {
-      const L = (await import("leaflet")).default;
+      const [{ default: L }] = await Promise.all([
+        import("leaflet"),
+        import("leaflet/dist/leaflet.css"),
+      ]);
       if (cancelled || !containerRef.current) return;
 
       if (!mapRef.current) {
@@ -85,7 +76,7 @@ export default function Location() {
     return () => {
       cancelled = true;
     };
-  }, [isDark]);
+  }, [isDark, visible]);
 
   useEffect(
     () => () => {
