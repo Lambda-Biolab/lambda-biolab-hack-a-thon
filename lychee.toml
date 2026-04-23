@@ -1,0 +1,26 @@
+# Lychee link checker config
+# https://lychee.cli.rs/usage/config/
+
+accept = [200, 201, 202, 204, 301, 302, 400, 401, 403, 406, 429, 500]
+timeout = 30
+max_retries = 2
+
+exclude_path = [
+  "node_modules",
+  ".next",
+  "out",
+  "pnpm-lock.yaml",
+]
+
+# URLs that return non-2xx to bots but resolve fine in browsers, or are
+# intentionally not meant to be fetched (example domains, generated links).
+exclude = [
+  # GitHub Pages path not yet populated on some runs
+  "^https?://localhost",
+  # LinkedIn rate-limits bot requests
+  "^https?://([a-z]+\\.)?linkedin\\.com",
+  # Shields / badges (rate-limited)
+  "^https?://img\\.shields\\.io",
+  # GitHub repo paths that may 404 until created (sibling private repo)
+  "^https?://github\\.com/Lambda-Biolab/lambda-hack-marketing-internal",
+]

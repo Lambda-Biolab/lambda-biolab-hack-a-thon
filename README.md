@@ -31,6 +31,7 @@ GITHUB_PAGES=true pnpm build      # GitHub Pages static export
 ```
 
 `GITHUB_PAGES=true` activates:
+
 - `output: "export"` — static HTML/CSS/JS under `out/`
 - `basePath: "/lambda-biolab-hack-a-thon"` — prefix all URLs
 - `NEXT_PUBLIC_BASE_PATH` — used by `src/lib/asset.ts` to prefix `<Image>` srcs
@@ -44,7 +45,7 @@ pnpm audit --prod --audit-level high   # security audit (runs in CI)
 
 ## Layout
 
-```
+```text
 src/
   app/
     layout.tsx    # root, metadata, CSP, theme init script
