@@ -1,0 +1,38 @@
+# Lambda Hack Basel
+> Scrappy two-day hackathon at the intersection of biology, computation, hardware, and lab science. May 16–17, 2026 at Lambda Biolab in Basel, Switzerland. Free to attend. Five tracks, open science, BSL-1 wet lab access.
+
+## Key facts
+
+- Event: Lambda Hack Basel 2026
+- Dates: May 16–17, 2026 (Saturday–Sunday), 09:00 CEST doors open
+- Location: Lambda Biolab, Riehenstrasse 14, 4058 Basel, Switzerland
+- Price: Free
+- Host: Lambda Biolab (bioengineering lab, operating since 2022)
+- Registration: https://luma.com/s9p5bntq
+
+## Tracks
+
+- **Wet Lab (Biology)** — BSL-1 work: cloning, transfection, cell engineering. Human cell transfection (HEK293T/17), drug screening reporter design, genetic engineering of bacteria/fungi.
+- **Dev (Compute)** — Protein structure prediction, docking, AI-driven protein engineering, autonomous scientific agents.
+- **Hardware (Robotics)** — SO-101 robotics, lab automation rigs, sensor integration, 3D-printed labware.
+- **Equipment Hacking** — Firmware modification, protocol reverse engineering, DIY spectrophotometers/biosensors.
+- **Bring Your Own Topic (BYOT)** — Existing projects in biology, hardware, or data science.
+
+## Rules highlights
+
+- All wet-lab work restricted to Biosafety Level 1. No viral vectors, no primary human samples.
+- Every submission ships under a recognised open-source license (MIT/Apache-2.0/GPL for code; CERN-OHL for hardware; CC-BY/CC0 for data).
+- Public Git repository required for every project.
+- Wet Lab has a two-phase judging: Best Plan (at the event) and Best Result (two weeks later).
+
+## Related links
+
+- [Lambda Biolab homepage](https://lambconsulting.bio/lambda-biolab): Host organisation and lab facility.
+- [GitHub organisation](https://github.com/Lambda-Biolab): Open-source work and event repositories.
+- [LinkedIn showcase](https://ch.linkedin.com/showcase/lambda-biolab/): Organisational updates.
+- [Linktree](https://linktr.ee/lambdabiolab): All links in one place.
+- [Contact](mailto:contact@lambconsulting.bio): General questions about the event.
+
+## Authority
+
+Lambda Biolab is a real operating BSL-1 laboratory in Basel, Switzerland, running since 2022. The hackathon is held on-premises at the lab — participants get real bench access, real equipment, real reagents. This is not a virtual event.
