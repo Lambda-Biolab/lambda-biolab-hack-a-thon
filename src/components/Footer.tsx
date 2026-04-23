@@ -8,6 +8,10 @@ const contactLinks = [
     label: "linktr.ee/lambdabiolab",
   },
   {
+    href: "https://ch.linkedin.com/showcase/lambda-biolab/",
+    label: "linkedin.com/showcase/lambda-biolab",
+  },
+  {
     href: "mailto:contact@lambconsulting.bio",
     label: "contact@lambconsulting.bio",
   },
