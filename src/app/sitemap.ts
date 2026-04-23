@@ -2,13 +2,18 @@ import type { MetadataRoute } from "next";
 
 const SITE_URL = "https://lambda-biolab.github.io/lambda-biolab-hack-a-thon";
 
-// Static export requires dynamic = "force-static" on Metadata Route handlers.
 export const dynamic = "force-static";
+
+// Static lastModified — updated when site content materially changes.
+// Build-time new Date() is unstable (drifts with every deploy) and signals
+// noise to crawlers; pin to the most recent substantive content change.
+const LAST_MODIFIED = "2026-04-23";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: SITE_URL,
+      lastModified: LAST_MODIFIED,
       changeFrequency: "weekly",
       priority: 1,
     },
