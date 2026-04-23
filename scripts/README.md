@@ -1,13 +1,39 @@
 # scripts/
 
-Self-contained dev scripts. None of these are part of the build or deploy — they're run manually by maintainers.
+Scripts in this directory plus the `pnpm` commands that wrap them. None are part of the build or deploy — run manually by maintainers.
+
+## `scripts/` directory
 
 | Script | Purpose | Trigger |
 |---|---|---|
-| [`optimize-photos.mjs`](./optimize-photos.mjs) | Resize + re-encode `public/photos` and `public/tracks` to WebP via sharp. Idempotent. | `pnpm optimize:photos` (after adding new photos) |
-| [`generate-og.mjs`](./generate-og.mjs) | Compose the share-card image from the Lambda Biolab avatar + event copy. Outputs `public/og-image.png` (1200×630) and `.github/social-preview.png` (1280×640). | `pnpm generate:og` (after brand / date / copy changes) |
-| [`install-claude-seo.sh`](./install-claude-seo.sh) | Install the optional [`claude-seo`](https://github.com/AgriciDaniel/claude-seo) audit plugin into your local Claude Code. Pinned to a version tag. | See below |
-| [`uninstall-claude-seo.sh`](./uninstall-claude-seo.sh) | Remove the claude-seo plugin. | See below |
+| [`optimize-photos.mjs`](./optimize-photos.mjs) | Resize + re-encode `public/photos` and `public/tracks` to WebP via sharp. Idempotent. | `pnpm optimize:photos` — after adding or replacing photos |
+| [`generate-og.mjs`](./generate-og.mjs) | Compose the share-card image from the Lambda Biolab avatar + event copy. Outputs `public/og-image.png` (1200×630) and `.github/social-preview.png` (1280×640). | `pnpm generate:og` — after brand / date / copy changes |
+| [`install-claude-seo.sh`](./install-claude-seo.sh) | Install the optional [`claude-seo`](https://github.com/AgriciDaniel/claude-seo) audit plugin into your local Claude Code. Pinned to a version tag. | `bash scripts/install-claude-seo.sh` — see [SEO audits](#seo-audits-optional) |
+| [`uninstall-claude-seo.sh`](./uninstall-claude-seo.sh) | Remove the claude-seo plugin. | `bash scripts/uninstall-claude-seo.sh` |
+
+## `package.json` scripts
+
+Exposed via `pnpm <name>`:
+
+| Script | What it does |
+|---|---|
+| `dev` | Start Next.js dev server on `http://localhost:3000` |
+| `build` | Production build. Set `GITHUB_PAGES=true` for the static export with basePath |
+| `start` | Serve the production build |
+| `lint` | ESLint (TypeScript + React + jsx-a11y via `eslint-config-next`) |
+| `lint:md` | `markdownlint-cli2` across every `.md` (config: `.markdownlint.json`) |
+| `lint:md:fix` | Auto-fix whatever markdownlint can (then re-run `lint:md` to verify) |
+| `lint:links` | `lychee` link check across every `.md` (config: `lychee.toml`) |
+| `optimize:photos` | See table above |
+| `generate:og` | See table above |
+
+## External tools
+
+| Tool | Used by | Install |
+|---|---|---|
+| [`lychee`](https://lychee.cli.rs/) | `pnpm lint:links` | `cargo install lychee` · or the GitHub Actions [`lychee-action`](https://github.com/lycheeverse/lychee-action) in CI |
+| [sharp](https://sharp.pixelplumbing.com/) | `optimize-photos.mjs`, `generate-og.mjs` | Auto-installed as devDep |
+| [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) | `pnpm lint:md` | Auto-installed as devDep |
 
 ## SEO audits (optional)
 
@@ -42,7 +68,7 @@ Restart Claude Code, then:
 /seo-geo   https://lambda-biolab.github.io/lambda-biolab-hack-a-thon/
 ```
 
-Other commands available: `/seo-schema`, `/seo-sitemap`, `/seo-plan`, `/seo-hreflang`, `/seo-competitor-pages`, plus the full set documented at [claude-seo.md](https://claude-seo.md/).
+Other commands: `/seo-schema`, `/seo-sitemap`, `/seo-plan`, `/seo-hreflang`, `/seo-competitor-pages`, plus the full set documented at [claude-seo.md](https://claude-seo.md/).
 
 ### What to skip for this site
 
