@@ -17,11 +17,54 @@ const firaCode = Fira_Code({
   weight: ["400"],
 });
 
+const SITE_URL = "https://lambda-biolab.github.io/lambda-biolab-hack-a-thon";
+const OG_IMAGE = `${SITE_URL}/og-image.png`;
+const TITLE = "Lambda Hack Basel — May 16–17, 2026";
+const DESCRIPTION =
+  "Five tracks. One basement. Zero gatekeeping. A scrappy hackathon at the intersection of biology, computation, hardware, and everything else.";
+
 export const metadata: Metadata = {
-  title: "Lambda Hack Basel — May 16–17, 2026",
-  description:
-    "Five tracks. One basement. Zero gatekeeping. A scrappy hackathon at the intersection of biology, computation, hardware, and everything else.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
   referrer: "strict-origin-when-cross-origin",
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    title: TITLE,
+    description: DESCRIPTION,
+    siteName: "Lambda Hack Basel",
+    locale: "en_CH",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Lambda Hack Basel — May 16–17, 2026. Five tracks. Real lab. Open science.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  keywords: [
+    "hackathon",
+    "Basel",
+    "Switzerland",
+    "biology",
+    "bioengineering",
+    "synthetic biology",
+    "Lambda Biolab",
+    "biohacking",
+    "DIY lab",
+    "BSL-1",
+  ],
+  authors: [{ name: "Lambda Biolab", url: "https://github.com/Lambda-Biolab" }],
+  creator: "Lambda Biolab",
+  publisher: "Lambda Biolab",
 };
 
 const csp = [
