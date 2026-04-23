@@ -11,6 +11,7 @@ System light/dark: respects `prefers-color-scheme`. Light mode is warm off-white
 ## 2. Color Palette
 
 ### Light Mode
+
 - **Background**: `#f7f8f8`
 - **Surface**: `#ffffff`
 - **Border**: `rgba(0,0,0,0.08)`
@@ -20,6 +21,7 @@ System light/dark: respects `prefers-color-scheme`. Light mode is warm off-white
 - **Text Muted**: `#8a8f98`
 
 ### Dark Mode
+
 - **Background**: `#08090a`
 - **Surface**: `rgba(255,255,255,0.03)`
 - **Border**: `rgba(255,255,255,0.08)`
@@ -29,11 +31,13 @@ System light/dark: respects `prefers-color-scheme`. Light mode is warm off-white
 - **Text Muted**: `#8a8f98`
 
 ### Accent
+
 - **Brand Indigo**: `#5e6ad2` (CTA backgrounds)
 - **Accent Violet**: `#7170ff` (links, active states)
 - **Accent Hover**: `#828fff`
 
 ### Track Colors
+
 - Bio: `#27a644`, Compute: `#5e6ad2`, Hardware: `#7c3aed`, BYOT: `#e5a00d`
 
 ## 3. Typography
