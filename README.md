@@ -39,9 +39,15 @@ GITHUB_PAGES=true pnpm build      # GitHub Pages static export
 ## Maintenance
 
 ```bash
+pnpm lint:md             # markdownlint on all .md
+pnpm lint:md:fix         # auto-fix markdownlint findings
+pnpm lint:links          # lychee link check on all .md
 pnpm optimize:photos     # re-encode public/photos to WebP via sharp
+pnpm generate:og         # regenerate og-image.png + .github/social-preview.png
 pnpm audit --prod --audit-level high   # security audit (runs in CI)
 ```
+
+See [`scripts/README.md`](./scripts/README.md) for the full script inventory and the optional [`claude-seo`](https://github.com/AgriciDaniel/claude-seo) audit installer.
 
 ## Layout
 
@@ -81,4 +87,11 @@ See [`DESIGN.md`](./DESIGN.md) for the design system (Linear-inspired; system li
 
 ## Deployment
 
-Pushes to `main` trigger [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml), which builds and publishes via GitHub Pages (workflow-mode). Manual dispatches (Actions → "Deploy to GitHub Pages" → "Run workflow") can target any branch.
+Two workflows cover the lifecycle:
+
+- [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) — runs on every pull request and push to `main`: `tsc --noEmit`, `pnpm lint`, `pnpm lint:md`, `pnpm audit --prod --audit-level high`, `GITHUB_PAGES=true pnpm build`, and lychee link check via `lycheeverse/lychee-action`.
+- [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) — runs on push to `main` (and `workflow_dispatch` from any branch): builds and publishes via GitHub Pages (workflow-mode deploy).
+
+## Changelog
+
+Release history and notable changes: [`CHANGELOG.md`](./CHANGELOG.md) (Keep-a-Changelog + SemVer).
