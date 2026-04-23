@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Map as LeafletMap, TileLayer } from "leaflet";
-import "leaflet/dist/leaflet.css";
 import { useIsDark } from "@/lib/useIsDark";
 
 const ADDRESS = "Riehenstrasse 14, 4058 Basel";
@@ -21,13 +20,33 @@ export default function Location() {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<LeafletMap | null>(null);
   const tileLayerRef = useRef<TileLayer | null>(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (!containerRef.current) return;
+    const el = containerRef.current;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setVisible(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!visible || !containerRef.current) return;
     let cancelled = false;
 
     (async () => {
-      const L = (await import("leaflet")).default;
+      const [{ default: L }] = await Promise.all([
+        import("leaflet"),
+        import("leaflet/dist/leaflet.css"),
+      ]);
       if (cancelled || !containerRef.current) return;
 
       if (!mapRef.current) {
@@ -57,7 +76,7 @@ export default function Location() {
     return () => {
       cancelled = true;
     };
-  }, [isDark]);
+  }, [isDark, visible]);
 
   useEffect(
     () => () => {
