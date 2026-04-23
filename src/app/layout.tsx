@@ -21,7 +21,19 @@ export const metadata: Metadata = {
   title: "Lambda Hack Basel — May 16–17, 2026",
   description:
     "Five tracks. One basement. Zero gatekeeping. A scrappy hackathon at the intersection of biology, computation, hardware, and everything else.",
+  referrer: "strict-origin-when-cross-origin",
 };
+
+const csp = [
+  "default-src 'self'",
+  "img-src 'self' data: https://*.basemaps.cartocdn.com",
+  "style-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline'",
+  "connect-src 'self'",
+  "font-src 'self'",
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+].join("; ");
 
 export default function RootLayout({
   children,
@@ -34,6 +46,9 @@ export default function RootLayout({
       className={`${inter.variable} ${firaCode.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <meta httpEquiv="Content-Security-Policy" content={csp} />
+      </head>
       <body className="min-h-full flex flex-col bg-bg text-t1 font-sans">
         <Script id="theme-init" strategy="beforeInteractive">
           {themeInitScript}
