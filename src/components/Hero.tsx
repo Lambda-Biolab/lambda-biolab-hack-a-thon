@@ -9,6 +9,7 @@ export default function Hero() {
           src="/photos/lab-user.jpg"
           alt=""
           fill
+          sizes="100vw"
           className="object-cover opacity-90 dark:opacity-0"
           priority
         />
@@ -16,6 +17,7 @@ export default function Hero() {
           src="/photos/signal-2025-10-06-025755_002.jpeg"
           alt=""
           fill
+          sizes="100vw"
           className="object-cover opacity-0 dark:opacity-80"
         />
         {/* Gradient overlay to keep text legible without hiding the image */}
