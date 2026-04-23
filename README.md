@@ -1,5 +1,7 @@
 # Lambda Hack Basel
 
+![Lambda Hack Basel — May 16–17, 2026. Five tracks. Real lab. Open science. By Lambda Biolab.](.github/social-preview.png)
+
 Website for **Lambda Hack Basel** — a scrappy hackathon at the intersection of biology, computation, hardware, and everything else. May 16–17, 2026. By [Lambda Biolab](https://lambconsulting.bio/lambda-biolab).
 
 Live: **[lambda-biolab.github.io/lambda-biolab-hack-a-thon](https://lambda-biolab.github.io/lambda-biolab-hack-a-thon/)**
