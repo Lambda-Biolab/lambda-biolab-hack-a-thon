@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Lab background — different images for light/dark */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src={asset("/photos/lab-user.jpg")}
+          src={asset("/photos/lab-user.webp")}
           alt=""
           fill
           sizes="100vw"
@@ -16,7 +16,7 @@ export default function Hero() {
           priority
         />
         <Image
-          src={asset("/photos/signal-2025-10-06-025755_002.jpeg")}
+          src={asset("/photos/signal-2025-10-06-025755_002.webp")}
           alt=""
           fill
           sizes="100vw"
