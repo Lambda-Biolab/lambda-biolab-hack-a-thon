@@ -15,7 +15,7 @@ Self-contained dev scripts. None of these are part of the build or deploy — th
 
 ### Preferred install — inside Claude Code (marketplace)
 
-```
+```text
 /plugin marketplace add AgriciDaniel/claude-seo
 /plugin install claude-seo@agricidaniel-seo
 ```
@@ -37,7 +37,7 @@ Requires `git` and `python3` (3.10+) on `PATH`. The upstream installer creates a
 
 Restart Claude Code, then:
 
-```
+```text
 /seo-audit https://lambda-biolab.github.io/lambda-biolab-hack-a-thon/
 /seo-geo   https://lambda-biolab.github.io/lambda-biolab-hack-a-thon/
 ```
