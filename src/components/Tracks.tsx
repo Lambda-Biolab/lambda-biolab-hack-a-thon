@@ -113,6 +113,7 @@ function TrackCard({ track }: { track: Track }) {
             src={track.photo}
             alt={track.photoAlt || ""}
             fill
+            sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover opacity-80"
             style={track.photoPosition ? { objectPosition: track.photoPosition } : undefined}
           />
