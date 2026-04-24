@@ -1,6 +1,6 @@
-export default function Register() {
-  const lumaUrl = "https://luma.com/s9p5bntq";
+import { site } from "@/config/site";
 
+export default function Register() {
   return (
     <section id="register" className="py-16 md:py-24 px-6">
       <div className="mx-auto max-w-md text-center">
@@ -12,7 +12,7 @@ export default function Register() {
         </p>
 
         <a
-          href={lumaUrl}
+          href={site.event.registrationUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-8 inline-flex items-center gap-2 bg-accent text-accent-t font-semibold px-8 py-3.5 rounded-lg hover:bg-accent-h transition-colors text-base"

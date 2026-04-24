@@ -3,9 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import type { Map as LeafletMap, TileLayer } from "leaflet";
 import { useIsDark } from "@/lib/useIsDark";
+import { site } from "@/config/site";
 
-const ADDRESS = "Riehenstrasse 14, 4058 Basel";
-const COORDS: [number, number] = [47.5602132, 7.5974754];
+const { venue } = site.event;
+const ADDRESS = `${venue.streetAddress}, ${venue.postalCode} ${venue.addressLocality}`;
+const COORDS: [number, number] = [venue.coordinates[0], venue.coordinates[1]];
 
 const TILES = {
   light: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",

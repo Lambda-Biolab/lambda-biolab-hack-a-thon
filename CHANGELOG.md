@@ -11,6 +11,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `src/config/site.ts` — single source of truth for URLs, event metadata, venue coordinates, and org identity/contact links. Consumed by `layout.tsx`, `robots.ts`, `sitemap.ts`, `Footer.tsx`, `Register.tsx`, `Location.tsx`.
+- `public/CNAME` — pins the `hack-basel.lambdabiolab.com` custom domain across deploys.
+- `scripts/verify-build.mjs` + `pnpm verify:build` — acceptance contract asserting post-build state (canonical URL, OG image, robots/sitemap domain, no basePath leak, CNAME present). Runs in CI as part of the `checks` job.
+
+### Changed
+
+- **Custom domain migration**: site now served from `https://hack-basel.lambdabiolab.com` instead of the GitHub Pages project URL. All canonical / OG / sitemap / robots / JSON-LD URLs updated via the new `site.ts` config.
+- `next.config.ts` — removed `basePath` (custom domain serves at origin root); set `NEXT_PUBLIC_BASE_PATH=""`. `GITHUB_PAGES=true` still gates `output: "export"`.
+- `public/photos/inside-lab/*` flattened into `public/photos/` and re-compressed to 800w (saves ~430 KB — these images display at ~290px in LabStrip, 1600w was wasteful).
+
+### Fixed
+
+- Scripts and everything else 404'd after the custom-domain switch because `basePath: "/lambda-biolab-hack-a-thon"` was baked into every asset URL. Removing the basePath + pinning CNAME restores all asset loads.
+
 ## [1.0.0] - 2026-04-23
 
 First public-ready release of the Lambda Hack Basel event site. Consolidates the site audit, SEO/GEO enablement, and governance baseline.

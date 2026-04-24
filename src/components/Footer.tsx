@@ -5,6 +5,7 @@ import {
   LinktreeIcon,
   WebsiteIcon,
 } from "@/components/icons";
+import { site } from "@/config/site";
 
 type ContactLink = {
   href: string;
@@ -13,31 +14,11 @@ type ContactLink = {
 };
 
 const contactLinks: ContactLink[] = [
-  {
-    href: "https://lambconsulting.bio/lambda-biolab",
-    label: "lambconsulting.bio",
-    Icon: WebsiteIcon,
-  },
-  {
-    href: "https://linktr.ee/lambdabiolab",
-    label: "Linktree",
-    Icon: LinktreeIcon,
-  },
-  {
-    href: "https://ch.linkedin.com/showcase/lambda-biolab/",
-    label: "LinkedIn",
-    Icon: LinkedInIcon,
-  },
-  {
-    href: "mailto:contact@lambconsulting.bio",
-    label: "contact@lambconsulting.bio",
-    Icon: EmailIcon,
-  },
-  {
-    href: "https://github.com/Lambda-Biolab",
-    label: "GitHub",
-    Icon: GithubIcon,
-  },
+  { href: site.org.website, label: "lambconsulting.bio", Icon: WebsiteIcon },
+  { href: site.org.linktree, label: "Linktree", Icon: LinktreeIcon },
+  { href: site.org.linkedin, label: "LinkedIn", Icon: LinkedInIcon },
+  { href: `mailto:${site.org.email}`, label: site.org.email, Icon: EmailIcon },
+  { href: site.org.github, label: "GitHub", Icon: GithubIcon },
 ];
 
 export default function Footer() {

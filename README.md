@@ -4,7 +4,7 @@
 
 Website for **Lambda Hack Basel** — a scrappy hackathon at the intersection of biology, computation, hardware, and everything else. May 16–17, 2026. By [Lambda Biolab](https://lambconsulting.bio/lambda-biolab).
 
-Live: **[lambda-biolab.github.io/lambda-biolab-hack-a-thon](https://lambda-biolab.github.io/lambda-biolab-hack-a-thon/)**
+Live: **[hack-basel.lambdabiolab.com](https://hack-basel.lambdabiolab.com/)**
 
 ## Stack
 
@@ -33,8 +33,8 @@ GITHUB_PAGES=true pnpm build      # GitHub Pages static export
 `GITHUB_PAGES=true` activates:
 
 - `output: "export"` — static HTML/CSS/JS under `out/`
-- `basePath: "/lambda-biolab-hack-a-thon"` — prefix all URLs
-- `NEXT_PUBLIC_BASE_PATH` — used by `src/lib/asset.ts` to prefix `<Image>` srcs
+
+The site is served from the custom domain `hack-basel.lambdabiolab.com` at the origin root, so no `basePath` is set. The `public/CNAME` file pins the custom-domain setting so it survives every deploy. Centralized site metadata (URL, event, org) lives in [`src/config/site.ts`](./src/config/site.ts).
 
 ## Maintenance
 
