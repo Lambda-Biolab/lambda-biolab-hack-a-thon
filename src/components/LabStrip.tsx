@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { asset } from "@/lib/asset";
 
 const photos = [
   { src: "/photos/lab-user.webp", alt: "Lab member working at the bench" },
@@ -30,7 +29,7 @@ export default function LabStrip() {
               className="relative aspect-[4/3] rounded-lg overflow-hidden border border-edge"
             >
               <Image
-                src={asset(photo.src)}
+                src={photo.src}
                 alt={photo.alt}
                 fill
                 sizes="(min-width: 768px) 33vw, 50vw"
