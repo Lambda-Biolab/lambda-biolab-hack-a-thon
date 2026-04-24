@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { GithubIcon } from "@/components/icons";
+import { site } from "@/config/site";
 
 export default function Hero() {
   return (
@@ -76,14 +77,14 @@ export default function Hero() {
 
         <div className="mt-6 flex items-center justify-center">
           <a
-            href="https://github.com/Lambda-Biolab"
+            href={site.org.github}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-t3 hover:text-t1 transition-colors"
             aria-label="Lambda Biolab on GitHub"
           >
             <GithubIcon />
-            <span>github.com/Lambda-Biolab</span>
+            <span>{site.org.github.replace(/^https?:\/\//, "")}</span>
           </a>
         </div>
       </div>
