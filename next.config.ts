@@ -1,17 +1,8 @@
 import type { NextConfig } from "next";
 
-const isGithubPages = process.env.GITHUB_PAGES === "true";
-const basePath = isGithubPages ? "/lambda-biolab-hack-a-thon" : "";
-
 const nextConfig: NextConfig = {
-  ...(isGithubPages && {
-    output: "export",
-    basePath,
-  }),
+  output: "export",
   images: { unoptimized: true },
-  env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
-  },
 };
 
 export default nextConfig;

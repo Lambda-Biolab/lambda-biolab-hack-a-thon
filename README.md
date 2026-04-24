@@ -4,7 +4,7 @@
 
 Website for **Lambda Hack Basel** — a scrappy hackathon at the intersection of biology, computation, hardware, and everything else. May 16–17, 2026. By [Lambda Biolab](https://lambconsulting.bio/lambda-biolab).
 
-Live: **[lambda-biolab.github.io/lambda-biolab-hack-a-thon](https://lambda-biolab.github.io/lambda-biolab-hack-a-thon/)**
+Live: **[hack-basel.lambdabiolab.com](https://hack-basel.lambdabiolab.com/)**
 
 ## Stack
 
@@ -26,15 +26,10 @@ pnpm dev        # http://localhost:3000
 ```bash
 pnpm lint
 pnpm exec tsc --noEmit
-pnpm build                        # regular build (no basePath)
-GITHUB_PAGES=true pnpm build      # GitHub Pages static export
+pnpm build      # static export to out/ (Next.js output: "export")
 ```
 
-`GITHUB_PAGES=true` activates:
-
-- `output: "export"` — static HTML/CSS/JS under `out/`
-- `basePath: "/lambda-biolab-hack-a-thon"` — prefix all URLs
-- `NEXT_PUBLIC_BASE_PATH` — used by `src/lib/asset.ts` to prefix `<Image>` srcs
+The site is served at the root of `hack-basel.lambdabiolab.com`, so no basePath is configured. The custom domain is preserved across deploys via `public/CNAME`.
 
 ## Maintenance
 
@@ -64,7 +59,7 @@ src/
     Location, Rules, Register, Footer
     icons.tsx     # shared brand + generic SVG icon components
   lib/
-    asset.ts      # prefix srcs with NEXT_PUBLIC_BASE_PATH
+    asset.ts      # asset path helper (identity; reserved for future basePath)
     useIsDark.ts  # theme hook (shared by Hero + Location)
 public/
   photos/         # event imagery (WebP; see PHOTOS.md)
@@ -89,7 +84,7 @@ See [`DESIGN.md`](./DESIGN.md) for the design system (Linear-inspired; system li
 
 Two workflows cover the lifecycle:
 
-- [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) — runs on every pull request and push to `main`: `tsc --noEmit`, `pnpm lint`, `pnpm lint:md`, `pnpm audit --prod --audit-level high`, `GITHUB_PAGES=true pnpm build`, and lychee link check via `lycheeverse/lychee-action`.
+- [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) — runs on every pull request and push to `main`: `tsc --noEmit`, `pnpm lint`, `pnpm lint:md`, `pnpm audit --prod --audit-level high`, `pnpm build`, and lychee link check via `lycheeverse/lychee-action`.
 - [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) — runs on push to `main` (and `workflow_dispatch` from any branch): builds and publishes via GitHub Pages (workflow-mode deploy).
 
 ## Changelog

@@ -17,7 +17,7 @@ const firaCode = Fira_Code({
   weight: ["400"],
 });
 
-const SITE_URL = "https://lambda-biolab.github.io/lambda-biolab-hack-a-thon";
+const SITE_URL = "https://hack-basel.lambdabiolab.com";
 const OG_IMAGE = `${SITE_URL}/og-image.png`;
 const TITLE = "Lambda Hack Basel — May 16–17, 2026";
 const DESCRIPTION =

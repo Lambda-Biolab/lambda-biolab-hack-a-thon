@@ -18,7 +18,7 @@ Exposed via `pnpm <name>`:
 | Script | What it does |
 |---|---|
 | `dev` | Start Next.js dev server on `http://localhost:3000` |
-| `build` | Production build. Set `GITHUB_PAGES=true` for the static export with basePath |
+| `build` | Production static export to `out/` (Next.js `output: "export"`) |
 | `start` | Serve the production build |
 | `lint` | ESLint (TypeScript + React + jsx-a11y via `eslint-config-next`) |
 | `lint:md` | `markdownlint-cli2` across every `.md` (config: `.markdownlint.json`) |
@@ -64,8 +64,8 @@ Requires `git` and `python3` (3.10+) on `PATH`. The upstream installer creates a
 Restart Claude Code, then:
 
 ```text
-/seo-audit https://lambda-biolab.github.io/lambda-biolab-hack-a-thon/
-/seo-geo   https://lambda-biolab.github.io/lambda-biolab-hack-a-thon/
+/seo-audit https://hack-basel.lambdabiolab.com/
+/seo-geo   https://hack-basel.lambdabiolab.com/
 ```
 
 Other commands: `/seo-schema`, `/seo-sitemap`, `/seo-plan`, `/seo-hreflang`, `/seo-competitor-pages`, plus the full set documented at [claude-seo.md](https://claude-seo.md/).

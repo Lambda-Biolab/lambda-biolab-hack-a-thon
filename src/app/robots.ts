@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://lambda-biolab.github.io/lambda-biolab-hack-a-thon";
+const SITE_URL = "https://hack-basel.lambdabiolab.com";
 
 export const dynamic = "force-static";
 
