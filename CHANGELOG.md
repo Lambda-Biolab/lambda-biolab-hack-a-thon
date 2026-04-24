@@ -15,26 +15,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Repo governance for AI agents and contributors, adopted from qte77/Agents-eval and tailored to this project (KISS/DRY/YAGNI):
-  - `AGENTS.md` — behavioural rules (core constraints, decision framework, escalation, compound-learning promotion path)
-  - `CONTRIBUTING.md` — technical workflow (setup, pre-PR checks, code patterns, commit/release flow)
-  - `AGENT_LEARNINGS.md` / `AGENT_REQUESTS.md` — empty templates ready to accumulate
-  - `.claude/rules/` — session-loaded `core-principles`, `context-management`, `compound-learning`
-  - `.claude/scripts/statusline.sh` — shared Claude Code status line
-  - `.claude/settings.json` — trimmed to this project (pnpm/node allowlist, dropped Makefile/pyproject references)
-- `src/config/site.ts` — single source of truth for URLs, event metadata, venue coordinates, and org identity/contact links. Consumed by `layout.tsx`, `robots.ts`, `sitemap.ts`, `Footer.tsx`, `Register.tsx`, `Location.tsx`.
-- `public/CNAME` — pins the `hack-basel.lambdabiolab.com` custom domain across deploys.
-- `scripts/verify-build.mjs` + `pnpm verify:build` — acceptance contract asserting post-build state (canonical URL, OG image, robots/sitemap domain, no basePath leak, CNAME present). Runs in CI as part of the `checks` job.
+- **Repo governance** — adapted from qte77/Agents-eval per KISS/DRY/YAGNI:
+  - `AGENTS.md` — behavioural rules for AI agents (core constraints, decision framework, escalation, compound-learning promotion path).
+  - `CONTRIBUTING.md` — technical workflow for humans and agents (setup, pre-PR checks, code patterns, commit/release flow).
+  - `AGENT_LEARNINGS.md`, `AGENT_REQUESTS.md` — empty templates.
+  - `.claude/rules/` — session-loaded `core-principles`, `context-management`, `compound-learning`.
+  - `.claude/settings.json` — trimmed permission list (pnpm/node allow; no Makefile or Python entries).
+  - `.claude/scripts/statusline.sh` — status-line integration.
+- **`src/config/site.ts`** — single source of truth for URLs, event metadata, venue coordinates, org identity, and contact links.
+- **`public/CNAME`** — pins `hack-basel.lambdabiolab.com`. Without this file GitHub Pages drops the custom-domain setting on every deploy.
+- **`scripts/verify-build.mjs`** + `pnpm verify:build` — 19-check acceptance contract on post-build state (CNAME content, canonical URL, OG image URL, robots/sitemap domain, JSON-LD `Event` presence, no basePath leak). Wired into the CI `checks` job.
 
 ### Changed
 
-- **Custom domain migration**: site now served from `https://hack-basel.lambdabiolab.com` instead of the GitHub Pages project URL. All canonical / OG / sitemap / robots / JSON-LD URLs updated via the new `site.ts` config.
-- `next.config.ts` — removed `basePath` (custom domain serves at origin root); set `NEXT_PUBLIC_BASE_PATH=""`. `GITHUB_PAGES=true` still gates `output: "export"`.
-- `public/photos/inside-lab/*` flattened into `public/photos/` and re-compressed to 800w (saves ~430 KB — these images display at ~290px in LabStrip, 1600w was wasteful).
+- **Site URL** migrated from the GitHub Pages project path `lambda-biolab.github.io/lambda-biolab-hack-a-thon` to the custom domain `hack-basel.lambdabiolab.com`. Every canonical, OG/Twitter, JSON-LD, sitemap `<loc>`, and robots `Host:`/`Sitemap:` reference derives from `site.ts`.
+- **`next.config.ts`** — removed `basePath` (custom domain serves at origin root); `NEXT_PUBLIC_BASE_PATH=""`. `GITHUB_PAGES=true` still gates `output: "export"`.
+- **Thumbnail photos re-encoded** at 800w, q=78 — saves ~430 KB total. Affects 4 LabStrip images (moved from `public/photos/inside-lab/` to `public/photos/`) plus 2 Tracks cards (`labware.webp`, `gfp-cells.webp`). 1600w was wasteful for images that display at 290–450 px.
 
 ### Fixed
 
-- Scripts and everything else 404'd after the custom-domain switch because `basePath: "/lambda-biolab-hack-a-thon"` was baked into every asset URL. Removing the basePath + pinning CNAME restores all asset loads.
+- **Every JS chunk and page asset returned 404 after the custom-domain switch.** `next.config.ts` still carried `basePath: "/lambda-biolab-hack-a-thon"`, so Next emitted asset URLs like `/lambda-biolab-hack-a-thon/_next/chunks/...` which 404'd against `hack-basel.lambdabiolab.com`. Removing the basePath restores root-relative asset resolution.
+
+### Removed
+
+- **`public/photos/inside-lab/`** — 4 WebPs flattened into `public/photos/`; directory deleted.
 
 ## [1.0.0] - 2026-04-23
 
