@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `CONTRIBUTING.md` — freeze policy for released CHANGELOG sections. Only `[Unreleased]` is editable; factual corrections to released entries require both an `[Unreleased]` note and a `gh release edit` to re-sync the Release body.
+
 ### Fixed
 
 - **Incorrect org URL references.** Resolved conflicting links across the site/docs. Convention: `hack-basel.lambdabiolab.com` for the hackathon, `www.lambconsulting.bio` for the host org (not `lambconsulting.bio/lambda-biolab` or plain `lambdabiolab.com`). Updated:
