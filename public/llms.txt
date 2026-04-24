@@ -27,7 +27,7 @@
 
 ## Related links
 
-- [Lambda Biolab homepage](https://lambconsulting.bio/lambda-biolab): Host organisation and lab facility.
+- [Lambda Biolab homepage](https://www.lambconsulting.bio): Host organisation and lab facility.
 - [GitHub organisation](https://github.com/Lambda-Biolab): Open-source work and event repositories.
 - [LinkedIn showcase](https://ch.linkedin.com/showcase/lambda-biolab/): Organisational updates.
 - [Linktree](https://linktr.ee/lambdabiolab): All links in one place.

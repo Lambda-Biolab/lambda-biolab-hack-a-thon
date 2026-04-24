@@ -11,6 +11,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **Incorrect org URL references.** Resolved conflicting links across the site/docs. Convention: `hack-basel.lambdabiolab.com` for the hackathon, `www.lambconsulting.bio` for the host org (not `lambconsulting.bio/lambda-biolab` or plain `lambdabiolab.com`). Updated:
+  - `src/config/site.ts` — `org.website` → `https://www.lambconsulting.bio` (now propagates to Footer, JSON-LD Organization, etc.)
+  - `src/components/ResultsRound.tsx` — two mentions of "writeup on lambdabiolab.com" → "writeup on lambconsulting.bio"
+  - `README.md` — `By [Lambda Biolab](https://www.lambconsulting.bio)` link target
+  - `public/llms.txt` — "Lambda Biolab homepage" link target
+- **Hero.tsx** GitHub-org link was hardcoded — now reads from `site.org.github`. Last remaining contact-URL duplication outside `site.ts`. CARTO tile URLs + OSM directions URL in `Location.tsx` intentionally left inline (map-integration implementation, not contacts).
+
 ### Changed
 
 - **`next.config.ts`** — dropped the `GITHUB_PAGES` env-var gate. `output: "export"` is now unconditional since there's only one deploy target. `pnpm build` replaces `GITHUB_PAGES=true pnpm build` everywhere. Matches the simpler approach from @antomicblitz's superseded PR #24.

@@ -33,7 +33,7 @@ export const site = {
     name: "Lambda Biolab",
     tagline: "Bioengineering everything since 2022",
     foundingYear: "2022",
-    website: "https://lambconsulting.bio/lambda-biolab",
+    website: "https://www.lambconsulting.bio",
     email: "contact@lambconsulting.bio",
     linkedin: "https://ch.linkedin.com/showcase/lambda-biolab/",
     github: "https://github.com/Lambda-Biolab",
