@@ -26,15 +26,12 @@ pnpm dev        # http://localhost:3000
 ```bash
 pnpm lint
 pnpm exec tsc --noEmit
-pnpm build                        # regular build (no basePath)
-GITHUB_PAGES=true pnpm build      # GitHub Pages static export
+pnpm build                        # dev-flavoured build (not exported)
+GITHUB_PAGES=true pnpm build      # static export under out/
+pnpm verify:build                 # 19-check acceptance contract on out/
 ```
 
-`GITHUB_PAGES=true` activates:
-
-- `output: "export"` — static HTML/CSS/JS under `out/`
-
-The site is served from the custom domain `hack-basel.lambdabiolab.com` at the origin root, so no `basePath` is set. The `public/CNAME` file pins the custom-domain setting so it survives every deploy. Centralized site metadata (URL, event, org) lives in [`src/config/site.ts`](./src/config/site.ts).
+`GITHUB_PAGES=true` activates `output: "export"` — the only difference between the two build modes. Both emit root-relative asset paths; the site is served from the custom domain `hack-basel.lambdabiolab.com` at the origin root, so no `basePath` is configured. [`public/CNAME`](./public/CNAME) pins the custom-domain setting across deploys (GitHub strips it otherwise). Site metadata (URLs, event, venue, org, contact) has a single source of truth at [`src/config/site.ts`](./src/config/site.ts).
 
 ## Maintenance
 
@@ -54,24 +51,34 @@ See [`scripts/README.md`](./scripts/README.md) for the full script inventory and
 ```text
 src/
   app/
-    layout.tsx    # root, metadata, CSP, theme init script
-    page.tsx      # home (all sections)
-    robots.ts     # /robots.txt
-    sitemap.ts    # /sitemap.xml
-    icon.png      # Lambda Biolab avatar, served as favicon
+    layout.tsx        # root: metadata, CSP, JSON-LD, pre-hydration theme script
+    page.tsx          # home (composes all sections)
+    globals.css       # Tailwind entry + design tokens
+    icon.png          # Lambda Biolab avatar → favicon (Next convention)
+    robots.ts         # emits /robots.txt (static export)
+    sitemap.ts        # emits /sitemap.xml (static export)
   components/
     Nav, Hero, Tracks, LabStrip, Schedule, ResultsRound,
     Location, Rules, Register, Footer
-    icons.tsx     # shared brand + generic SVG icon components
+    icons.tsx         # shared brand + generic SVG icons
+  config/
+    site.ts           # URL, event, venue, org, contact — single source of truth
   lib/
-    asset.ts      # prefix srcs with NEXT_PUBLIC_BASE_PATH
-    useIsDark.ts  # theme hook (shared by Hero + Location)
+    asset.ts          # image-src helper (currently pass-through)
+    useIsDark.ts      # theme hook shared by Hero + Location
 public/
-  photos/         # event imagery (WebP; see PHOTOS.md)
-  tracks/         # track card icons
+  CNAME               # pins hack-basel.lambdabiolab.com
+  og-image.png        # 1200×630 OG/Twitter card
+  llms.txt            # AI-crawler content guidance
+  photos/             # event imagery (WebP; see PHOTOS.md)
+  tracks/             # track card icons
 scripts/
-  optimize-photos.mjs    # sharp pipeline, re-runnable
-  generate-og.mjs        # OG + GitHub social preview images
+  optimize-photos.mjs       # sharp photo pipeline
+  generate-og.mjs           # OG card + GitHub social preview
+  verify-build.mjs          # post-build acceptance contract
+  install-claude-seo.sh     # optional SEO audit plugin installer
+  uninstall-claude-seo.sh
+  README.md                 # inventory + pnpm-script mapping
 ```
 
 ## Design
@@ -80,12 +87,9 @@ See [`DESIGN.md`](./DESIGN.md) for the design system (Linear-inspired; system li
 
 ## Contributing
 
-- Technical workflow: [`CONTRIBUTING.md`](./CONTRIBUTING.md) — setup, pre-PR checks, code patterns, commit/release flow.
-- AI-agent behaviour rules: [`AGENTS.md`](./AGENTS.md). Session-loaded rules in [`.claude/rules/`](./.claude/rules/).
-- Commit style: [`.gitmessage`](./.gitmessage) — Conventional Commits. Apply locally with `git config commit.template .gitmessage`.
-- PR + issue templates under [`.github/`](./.github/) cover expected checks and categories.
-- Site content licensed under [`LICENSE`](./LICENSE) (MIT).
-- Photos under `public/photos/` are covered separately — see [`PHOTOS.md`](./PHOTOS.md). Forks: supply your own imagery.
+- **Technical workflow**: [`CONTRIBUTING.md`](./CONTRIBUTING.md) covers setup, pre-PR checks, code patterns, conventional-commit style, and release flow. Single authoritative source — other pointers here defer to it.
+- **AI-agent behaviour**: [`AGENTS.md`](./AGENTS.md). Session-loaded rules in [`.claude/rules/`](./.claude/rules/).
+- **License**: site code MIT ([`LICENSE`](./LICENSE)). Photos under `public/photos/` have separate terms — see [`PHOTOS.md`](./PHOTOS.md). Forks: supply your own imagery.
 
 ## Deployment
 
