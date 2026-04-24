@@ -17,7 +17,7 @@ const steps: { label: string; detail: string }[] = [
   {
     label: "Best Result award",
     detail:
-      "Judged by Lambda Biolab staff. Prize: 1 month free Lambda Biolab bench membership plus a published writeup on lambdabiolab.com.",
+      "Judged by Lambda Biolab staff. Prize: 1 month free Lambda Biolab bench membership plus a published writeup on lambconsulting.bio.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function ResultsRound() {
         </ol>
 
         <p className="mt-6 text-xs text-t3 leading-relaxed text-center">
-          Non–Wet Lab teams who finish long-running work (model training, fabrication, firmware field tests) after the event are welcome to push results to their repo and tell us. Standout late submissions get a featured writeup on lambdabiolab.com — no formal prize, just recognition.
+          Non–Wet Lab teams who finish long-running work (model training, fabrication, firmware field tests) after the event are welcome to push results to their repo and tell us. Standout late submissions get a featured writeup on lambconsulting.bio — no formal prize, just recognition.
         </p>
       </div>
     </section>
