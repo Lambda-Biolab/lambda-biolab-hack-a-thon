@@ -29,7 +29,7 @@ Closes <!-- #issue-number or N/A -->
 
 - [ ] `pnpm exec tsc --noEmit` passes
 - [ ] `pnpm lint` passes
-- [ ] `GITHUB_PAGES=true pnpm build` produces `out/` without errors
+- [ ] `pnpm build` produces `out/` without errors
 - [ ] `pnpm audit --prod --audit-level high` clean (if deps changed)
 - [ ] Manual smoke in both mobile (≤390px) and desktop viewports
 - [ ] Manual smoke in both light and dark theme

@@ -26,12 +26,11 @@ pnpm dev        # http://localhost:3000
 ```bash
 pnpm lint
 pnpm exec tsc --noEmit
-pnpm build                        # dev-flavoured build (not exported)
-GITHUB_PAGES=true pnpm build      # static export under out/
+pnpm build                        # static export under out/
 pnpm verify:build                 # 19-check acceptance contract on out/
 ```
 
-`GITHUB_PAGES=true` activates `output: "export"` — the only difference between the two build modes. Both emit root-relative asset paths; the site is served from the custom domain `hack-basel.lambdabiolab.com` at the origin root, so no `basePath` is configured. [`public/CNAME`](./public/CNAME) pins the custom-domain setting across deploys (GitHub strips it otherwise). Site metadata (URLs, event, venue, org, contact) has a single source of truth at [`src/config/site.ts`](./src/config/site.ts).
+`next.config.ts` sets `output: "export"` unconditionally — the only deploy target is GitHub Pages. The site serves from the custom domain `hack-basel.lambdabiolab.com` at the origin root (no `basePath`). [`public/CNAME`](./public/CNAME) pins the custom-domain setting across deploys; GitHub strips it otherwise. Site metadata (URLs, event, venue, org, contact) has a single source of truth at [`src/config/site.ts`](./src/config/site.ts).
 
 ## Maintenance
 
@@ -64,7 +63,6 @@ src/
   config/
     site.ts           # URL, event, venue, org, contact — single source of truth
   lib/
-    asset.ts          # image-src helper (currently pass-through)
     useIsDark.ts      # theme hook shared by Hero + Location
 public/
   CNAME               # pins hack-basel.lambdabiolab.com
@@ -95,7 +93,7 @@ See [`DESIGN.md`](./DESIGN.md) for the design system (Linear-inspired; system li
 
 Two workflows cover the lifecycle:
 
-- [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) — runs on every pull request and push to `main`: `tsc --noEmit`, `pnpm lint`, `pnpm lint:md`, `pnpm audit --prod --audit-level high`, `GITHUB_PAGES=true pnpm build`, and lychee link check via `lycheeverse/lychee-action`.
+- [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) — runs on every pull request and push to `main`: `tsc --noEmit`, `pnpm lint`, `pnpm lint:md`, `pnpm audit --prod --audit-level high`, `pnpm build`, `pnpm verify:build`, and lychee link check via `lycheeverse/lychee-action`.
 - [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) — runs on push to `main` (and `workflow_dispatch` from any branch): builds and publishes via GitHub Pages (workflow-mode deploy).
 
 ## Changelog

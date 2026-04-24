@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { asset } from "@/lib/asset";
 
 interface Track {
   tag: string;
@@ -111,7 +110,7 @@ function TrackCard({ track }: { track: Track }) {
       {track.photo && (
         <div className="relative h-32 w-full">
           <Image
-            src={asset(track.photo)}
+            src={track.photo}
             alt={track.photoAlt || ""}
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
@@ -123,7 +122,7 @@ function TrackCard({ track }: { track: Track }) {
       <div className="p-6">
       <div className="flex items-start gap-4">
         <Image
-          src={asset(track.icon)}
+          src={track.icon}
           alt={track.tag}
           width={56}
           height={56}

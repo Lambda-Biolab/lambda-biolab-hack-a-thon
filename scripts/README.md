@@ -18,7 +18,7 @@ Exposed via `pnpm <name>`:
 | Script | What it does |
 |---|---|
 | `dev` | Start Next.js dev server on `http://localhost:3000` |
-| `build` | Production build. Set `GITHUB_PAGES=true` for the static export with basePath |
+| `build` | Static export to `out/` (served at the custom domain origin root) |
 | `start` | Serve the production build |
 | `lint` | ESLint (TypeScript + React + jsx-a11y via `eslint-config-next`) |
 | `lint:md` | `markdownlint-cli2` across every `.md` (config: `.markdownlint.json`) |

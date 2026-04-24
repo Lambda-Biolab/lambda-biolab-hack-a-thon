@@ -31,8 +31,6 @@ jobs:
       - run: pnpm lint:md
       - run: pnpm audit --prod --audit-level high
       - run: pnpm build
-        env:
-          GITHUB_PAGES: "true"
       - run: pnpm verify:build
 
   links:

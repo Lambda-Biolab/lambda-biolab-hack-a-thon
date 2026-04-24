@@ -22,7 +22,7 @@ pnpm exec tsc --noEmit
 pnpm lint
 pnpm lint:md
 pnpm audit --prod --audit-level high
-GITHUB_PAGES=true pnpm build
+pnpm build
 pnpm verify:build   # 19-check post-build acceptance contract
 ```
 
@@ -31,7 +31,7 @@ For link-checking across markdown: `pnpm lint:links` (requires [`lychee`](https:
 ## Code patterns
 
 - **Site metadata** (URL, dates, venue, org/contact) — single source in [`src/config/site.ts`](src/config/site.ts). Never hardcode.
-- **Image `src`** — always pass through `asset()` from [`src/lib/asset.ts`](src/lib/asset.ts). Honours `NEXT_PUBLIC_BASE_PATH` if we ever re-introduce a basePath.
+- **Image `src`** — root-relative paths (no basePath helper). If we ever re-introduce a basePath, the right pattern is to expose it via `NEXT_PUBLIC_BASE_PATH` and wrap via a new helper at the call sites (see v1.0.0 history for the prior `asset()` pattern).
 - **Brand icons** (GitHub, LinkedIn, Linktree, etc.) — named components in [`src/components/icons.tsx`](src/components/icons.tsx). SVG paths sourced from [simpleicons.org](https://simpleicons.org).
 - **Theme** — light/dark via `prefers-color-scheme` + pre-hydration script in `layout.tsx`. Shared hook at [`src/lib/useIsDark.ts`](src/lib/useIsDark.ts).
 - **Photos** — WebP under `public/photos/`, display sizes via `sizes` prop. Re-optimize with `pnpm optimize:photos` (resizes + re-encodes). See [PHOTOS.md](PHOTOS.md) for reuse terms.

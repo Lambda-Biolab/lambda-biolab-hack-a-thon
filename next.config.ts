@@ -1,17 +1,11 @@
 import type { NextConfig } from "next";
 
-// GITHUB_PAGES=true activates the static export for the deploy workflow.
-// Site is served from the custom domain hack-basel.lambdabiolab.com at
-// the origin root — no basePath needed. If we ever revert to the github.io
-// project URL, re-add basePath + NEXT_PUBLIC_BASE_PATH together.
-const isGithubPages = process.env.GITHUB_PAGES === "true";
-
+// Single deploy target: static export to GitHub Pages, served at the
+// custom domain hack-basel.lambdabiolab.com (origin root, no basePath).
+// `pnpm dev` ignores `output` and runs the normal dev server.
 const nextConfig: NextConfig = {
-  ...(isGithubPages && { output: "export" }),
+  output: "export",
   images: { unoptimized: true },
-  env: {
-    NEXT_PUBLIC_BASE_PATH: "",
-  },
 };
 
 export default nextConfig;

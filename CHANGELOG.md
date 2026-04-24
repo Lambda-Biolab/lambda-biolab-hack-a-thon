@@ -11,6 +11,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **`next.config.ts`** — dropped the `GITHUB_PAGES` env-var gate. `output: "export"` is now unconditional since there's only one deploy target. `pnpm build` replaces `GITHUB_PAGES=true pnpm build` everywhere. Matches the simpler approach from @antomicblitz's superseded PR #24.
+- **CI + deploy workflows** — `GITHUB_PAGES: "true"` env removed from the build step (no longer needed).
+- **PR template** — `GITHUB_PAGES=true pnpm build` checkbox simplified to `pnpm build`.
+
+### Removed
+
+- **`src/lib/asset.ts`** — helper was a no-op after basePath removal in 1.1.0. Callers now use root-relative image `src` directly. Also dropped `NEXT_PUBLIC_BASE_PATH` from `next.config.ts` env.
+
 ## [1.1.0] - 2026-04-24
 
 ### Added
