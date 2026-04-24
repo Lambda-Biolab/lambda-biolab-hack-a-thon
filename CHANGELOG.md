@@ -13,6 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Repo governance for AI agents and contributors, adopted from qte77/Agents-eval and tailored to this project (KISS/DRY/YAGNI):
+  - `AGENTS.md` — behavioural rules (core constraints, decision framework, escalation, compound-learning promotion path)
+  - `CONTRIBUTING.md` — technical workflow (setup, pre-PR checks, code patterns, commit/release flow)
+  - `AGENT_LEARNINGS.md` / `AGENT_REQUESTS.md` — empty templates ready to accumulate
+  - `.claude/rules/` — session-loaded `core-principles`, `context-management`, `compound-learning`
+  - `.claude/scripts/statusline.sh` — shared Claude Code status line
+  - `.claude/settings.json` — trimmed to this project (pnpm/node allowlist, dropped Makefile/pyproject references)
 - `src/config/site.ts` — single source of truth for URLs, event metadata, venue coordinates, and org identity/contact links. Consumed by `layout.tsx`, `robots.ts`, `sitemap.ts`, `Footer.tsx`, `Register.tsx`, `Location.tsx`.
 - `public/CNAME` — pins the `hack-basel.lambdabiolab.com` custom domain across deploys.
 - `scripts/verify-build.mjs` + `pnpm verify:build` — acceptance contract asserting post-build state (canonical URL, OG image, robots/sitemap domain, no basePath leak, CNAME present). Runs in CI as part of the `checks` job.
