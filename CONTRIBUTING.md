@@ -61,6 +61,8 @@ Types: `feat`, `fix`, `docs`, `chore`, `refactor`, `perf`, `test`, `ci`, `style`
 
 Trivial changes (typo fixes, formatting, test-only tweaks) don't need an entry.
 
+**Released sections are frozen.** Only `[Unreleased]` is editable. Cosmetic rewording of released entries is forbidden. Factual corrections to a released entry require (a) an `[Unreleased]` note documenting the correction, and (b) `gh release edit <tag> --notes-file <section>` to keep the GitHub Release body in sync.
+
 ## Releases
 
 After a batch of merged PRs:
