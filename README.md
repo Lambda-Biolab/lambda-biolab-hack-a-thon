@@ -80,8 +80,10 @@ See [`DESIGN.md`](./DESIGN.md) for the design system (Linear-inspired; system li
 
 ## Contributing
 
-- Commit style: see [`.gitmessage`](./.gitmessage) — Conventional Commits. Apply locally with `git config commit.template .gitmessage`.
-- PR template + issue templates under [`.github/`](./.github/) cover expected checks and categories.
+- Technical workflow: [`CONTRIBUTING.md`](./CONTRIBUTING.md) — setup, pre-PR checks, code patterns, commit/release flow.
+- AI-agent behaviour rules: [`AGENTS.md`](./AGENTS.md). Session-loaded rules in [`.claude/rules/`](./.claude/rules/).
+- Commit style: [`.gitmessage`](./.gitmessage) — Conventional Commits. Apply locally with `git config commit.template .gitmessage`.
+- PR + issue templates under [`.github/`](./.github/) cover expected checks and categories.
 - Site content licensed under [`LICENSE`](./LICENSE) (MIT).
 - Photos under `public/photos/` are covered separately — see [`PHOTOS.md`](./PHOTOS.md). Forks: supply your own imagery.
 
