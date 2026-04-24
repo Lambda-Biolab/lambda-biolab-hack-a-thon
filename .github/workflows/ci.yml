@@ -33,6 +33,7 @@ jobs:
       - run: pnpm build
         env:
           GITHUB_PAGES: "true"
+      - run: pnpm verify:build
 
   links:
     runs-on: ubuntu-latest

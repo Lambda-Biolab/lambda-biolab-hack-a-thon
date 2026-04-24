@@ -11,7 +11,8 @@
     "lint:md:fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"#out\" \"#.next\"",
     "lint:links": "lychee --config lychee.toml --no-progress \"**/*.md\"",
     "optimize:photos": "node scripts/optimize-photos.mjs",
-    "generate:og": "node scripts/generate-og.mjs"
+    "generate:og": "node scripts/generate-og.mjs",
+    "verify:build": "node scripts/verify-build.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
