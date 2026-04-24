@@ -64,8 +64,8 @@ Requires `git` and `python3` (3.10+) on `PATH`. The upstream installer creates a
 Restart Claude Code, then:
 
 ```text
-/seo-audit https://lambda-biolab.github.io/lambda-biolab-hack-a-thon/
-/seo-geo   https://lambda-biolab.github.io/lambda-biolab-hack-a-thon/
+/seo-audit https://hack-basel.lambdabiolab.com/
+/seo-geo   https://hack-basel.lambdabiolab.com/
 ```
 
 Other commands: `/seo-schema`, `/seo-sitemap`, `/seo-plan`, `/seo-hreflang`, `/seo-competitor-pages`, plus the full set documented at [claude-seo.md](https://claude-seo.md/).

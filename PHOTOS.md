@@ -2,7 +2,7 @@
 
 Images under [`public/photos/`](./public/photos) are included in this
 repository **for use by this site only** (Lambda Hack Basel 2026 at
-lambda-biolab.github.io/lambda-biolab-hack-a-thon/).
+hack-basel.lambdabiolab.com).
 
 They are **not** covered by the [MIT `LICENSE`](./LICENSE) that governs the
 source code.

@@ -20,7 +20,7 @@ body:
     id: url
     attributes:
       label: Page URL (if applicable)
-      placeholder: "https://lambda-biolab.github.io/lambda-biolab-hack-a-thon/#tracks"
+      placeholder: "https://hack-basel.lambdabiolab.com/#tracks"
 
   - type: dropdown
     id: viewport

@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = "https://lambda-biolab.github.io/lambda-biolab-hack-a-thon";
+import { site } from "@/config/site";
 
 export const dynamic = "force-static";
 
@@ -26,7 +25,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "*", allow: "/" },
       ...AI_CRAWLERS.map((ua) => ({ userAgent: ua, allow: "/" })),
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
-    host: SITE_URL,
+    sitemap: `${site.url}/sitemap.xml`,
+    host: site.url,
   };
 }

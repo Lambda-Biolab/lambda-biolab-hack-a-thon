@@ -61,5 +61,5 @@ bash "$TMP/claude-seo/install.sh"
 
 echo
 echo "✓ done. Restart Claude Code to pick up the new skills."
-echo "  Try:  claude  →  /seo-audit https://lambda-biolab.github.io/lambda-biolab-hack-a-thon/"
+echo "  Try:  claude  →  /seo-audit https://hack-basel.lambdabiolab.com/"
 echo "  Uninstall:  bash scripts/uninstall-claude-seo.sh"
