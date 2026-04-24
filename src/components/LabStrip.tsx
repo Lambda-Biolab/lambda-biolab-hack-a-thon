@@ -3,10 +3,10 @@ import { asset } from "@/lib/asset";
 
 const photos = [
   { src: "/photos/lab-user.webp", alt: "Lab member working at the bench" },
-  { src: "/photos/inside-lab/DJI_20231217073519_0199_D.webp", alt: "Blue light transilluminator with agar plate" },
-  { src: "/photos/inside-lab/fluorescent-tubes-uv.webp", alt: "Fluorescent protein tubes glowing under UV" },
-  { src: "/photos/inside-lab/20241201_154803.webp", alt: "Electrophoresis and microscope bench" },
-  { src: "/photos/inside-lab/20241031_230227.webp", alt: "Incubator shaker with bacterial cultures" },
+  { src: "/photos/DJI_20231217073519_0199_D.webp", alt: "Blue light transilluminator with agar plate" },
+  { src: "/photos/fluorescent-tubes-uv.webp", alt: "Fluorescent protein tubes glowing under UV" },
+  { src: "/photos/20241201_154803.webp", alt: "Electrophoresis and microscope bench" },
+  { src: "/photos/20241031_230227.webp", alt: "Incubator shaker with bacterial cultures" },
   { src: "/photos/antonio-pipetting.webp", alt: "Pipetting at the bench" },
 ];
 
