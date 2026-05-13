@@ -40,6 +40,10 @@ export default function Nav() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-lg border-b border-edge">
+      <div className="bg-accent text-accent-t text-center text-xs sm:text-sm px-6 py-2 leading-snug">
+        <span className="font-semibold">Update:</span>{" "}
+        Now a relaxed half-day on Saturday, May 16. Competition is optional — drop in for great food, the lab, and good company.
+      </div>
       <div className="mx-auto max-w-4xl flex items-center justify-between px-6 h-14">
         <a href="#" className="flex items-baseline gap-1.5">
           <span className="text-base font-semibold text-t1 tracking-tight">
